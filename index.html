@@ -1,0 +1,2651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>IANJ — Iglesia Apostólica del Nombre de Jesucristo</title>
+<meta name="description" content="There is salvation in no other Name. The Apostolic message of Jesus Christ alone — repent, be baptized in His name, and receive the Holy Spirit. Acts 2:38, Acts 4:12." />
+<meta name="theme-color" content="#050810" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  /* ============================================================
+     DESIGN TOKENS — Sacred Cinematic
+     ============================================================ */
+  :root {
+    /* Depth — black to night sky */
+    --void: #030509;
+    --night: #060a14;
+    --abyss: #080d1c;
+    --midnight: #0a1226;
+    --indigo: #131e3a;
+    --azure: #1c2d52;
+    --slate: #2a3a5c;
+
+    /* Light — gold and ember */
+    --gold-1: #fff4cc;
+    --gold-2: #f4d57c;
+    --gold-3: #d4af37;
+    --gold-4: #b08e3e;
+    --gold-5: #8a6e2a;
+    --ember: #ff9c54;
+
+    /* Surface */
+    --ivory: #f6f0e3;
+    --cream: #fbf7ed;
+    --paper: #efe7d3;
+    --mist: rgba(255, 255, 255, 0.06);
+    --mist-hi: rgba(255, 255, 255, 0.10);
+    --line: rgba(255, 255, 255, 0.08);
+    --line-gold: rgba(212, 175, 55, 0.22);
+
+    /* Type */
+    --font-display: 'Fraunces', 'Cormorant Garamond', Georgia, serif;
+    --font-serif: 'Cormorant Garamond', Georgia, serif;
+    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+
+    --text-mono: 0.72rem;
+    --text-sm: 0.875rem;
+    --text-base: 1rem;
+    --text-lg: 1.125rem;
+    --text-xl: clamp(1.25rem, 1.05rem + 0.6vw, 1.5rem);
+    --text-2xl: clamp(1.5rem, 1.2rem + 1vw, 2rem);
+    --text-3xl: clamp(2rem, 1.5rem + 2vw, 2.75rem);
+    --text-4xl: clamp(2.5rem, 1.8rem + 3vw, 4rem);
+    --text-display: clamp(3rem, 2rem + 5.5vw, 6.5rem);
+    --text-hero: clamp(3.5rem, 2rem + 8vw, 9rem);
+
+    /* Spacing */
+    --space-section: clamp(5rem, 3.5rem + 6vw, 10rem);
+    --container: 1280px;
+    --container-narrow: 920px;
+    --container-tight: 760px;
+
+    /* Motion */
+    --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+    --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+    --d-fast: 240ms;
+    --d-med: 480ms;
+    --d-slow: 800ms;
+    --d-cinema: 1400ms;
+  }
+
+  /* ============================================================
+     RESET & BASE
+     ============================================================ */
+  *, *::before, *::after { box-sizing: border-box; }
+  * { margin: 0; padding: 0; }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    font-size: var(--text-base);
+    line-height: 1.65;
+    color: var(--ivory);
+    background: var(--void);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    text-rendering: optimizeLegibility;
+  }
+
+  body::before {
+    /* Film grain — adds organic warmth */
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 200;
+    opacity: 0.05;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  img, svg { display: block; max-width: 100%; height: auto; }
+  a { color: inherit; text-decoration: none; transition: color var(--d-fast) var(--ease-out-quart); }
+  button { font-family: inherit; font-size: inherit; background: none; border: none; cursor: pointer; color: inherit; }
+  input, select, textarea { font-family: inherit; font-size: inherit; }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    line-height: 1.05;
+    letter-spacing: -0.025em;
+    color: var(--ivory);
+    font-variation-settings: "opsz" 144;
+  }
+
+  ::selection { background: var(--gold-3); color: var(--void); }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar { width: 8px; height: 8px; }
+  ::-webkit-scrollbar-track { background: var(--void); }
+  ::-webkit-scrollbar-thumb { background: var(--indigo); border-radius: 4px; }
+  ::-webkit-scrollbar-thumb:hover { background: var(--gold-5); }
+
+  /* ============================================================
+     LAYOUT
+     ============================================================ */
+  .container {
+    width: 100%;
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 0 1.75rem;
+  }
+  .container-narrow { width: 100%; max-width: var(--container-narrow); margin: 0 auto; padding: 0 1.75rem; }
+  .container-tight { width: 100%; max-width: var(--container-tight); margin: 0 auto; padding: 0 1.75rem; }
+
+  .section { padding-block: var(--space-section); position: relative; }
+
+  /* ============================================================
+     COMPONENT — Eyebrow / Scripture chip
+     ============================================================ */
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-family: var(--font-mono);
+    font-size: var(--text-mono);
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold-2);
+  }
+  .eyebrow::before {
+    content: '';
+    width: 28px;
+    height: 1px;
+    background: var(--gold-3);
+  }
+
+  .scripture-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.85rem;
+    padding: 0.55rem 1.1rem;
+    border: 1px solid var(--line-gold);
+    border-radius: 999px;
+    background: rgba(212, 175, 55, 0.04);
+    backdrop-filter: blur(8px);
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold-2);
+  }
+  .scripture-chip::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--gold-3);
+    box-shadow: 0 0 12px var(--gold-2);
+    animation: pulse 2.4s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 0.5; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.25); }
+  }
+
+  .section-title {
+    font-size: var(--text-4xl);
+    margin-bottom: 1.25rem;
+  }
+  .section-title em {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-weight: 400;
+    color: var(--gold-2);
+  }
+  .section-lead {
+    font-family: var(--font-serif);
+    font-size: var(--text-xl);
+    font-style: italic;
+    line-height: 1.55;
+    color: rgba(246, 240, 227, 0.7);
+    max-width: 58ch;
+    font-weight: 300;
+  }
+
+  .section-header { margin-bottom: 4.5rem; }
+  .section-header.center { text-align: center; }
+  .section-header.center .eyebrow { justify-content: center; }
+  .section-header.center .eyebrow::after { content: ''; width: 28px; height: 1px; background: var(--gold-3); }
+  .section-header.center .section-lead { margin-inline: auto; }
+
+  /* ============================================================
+     COMPONENT — Buttons (magnetic-ready)
+     ============================================================ */
+  .btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.7rem;
+    padding: 1.05rem 2rem;
+    font-family: var(--font-sans);
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    border-radius: 999px;
+    transition: transform var(--d-med) var(--ease-out-expo),
+                background var(--d-med) var(--ease-out-expo),
+                color var(--d-med) var(--ease-out-expo),
+                box-shadow var(--d-med) var(--ease-out-expo);
+    cursor: pointer;
+    min-height: 52px;
+    white-space: nowrap;
+    will-change: transform;
+    isolation: isolate;
+    overflow: hidden;
+  }
+  .btn svg { width: 18px; height: 18px; transition: transform var(--d-med) var(--ease-out-expo); }
+  .btn:hover svg { transform: translateX(4px); }
+
+  .btn-primary {
+    background: var(--gold-3);
+    color: var(--void);
+    box-shadow: 0 10px 30px rgba(212, 175, 55, 0.25), inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+  }
+  .btn-primary::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+    transform: translateX(-100%);
+    transition: transform var(--d-cinema) var(--ease-out-expo);
+    z-index: -1;
+  }
+  .btn-primary:hover {
+    background: var(--gold-2);
+    box-shadow: 0 14px 40px rgba(244, 213, 124, 0.4);
+  }
+  .btn-primary:hover::after { transform: translateX(100%); }
+
+  .btn-ghost {
+    background: transparent;
+    color: var(--ivory);
+    border: 1px solid var(--line-gold);
+    backdrop-filter: blur(8px);
+  }
+  .btn-ghost:hover {
+    background: rgba(212, 175, 55, 0.08);
+    border-color: var(--gold-2);
+    color: var(--gold-1);
+  }
+
+  .btn-text {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    color: var(--gold-2);
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--line-gold);
+    transition: all var(--d-med) var(--ease-out-expo);
+  }
+  .btn-text:hover { color: var(--gold-1); border-color: var(--gold-2); }
+
+  /* ============================================================
+     SCROLL PROGRESS BAR
+     ============================================================ */
+  .progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 2px;
+    width: 0%;
+    background: linear-gradient(90deg, transparent, var(--gold-3), var(--gold-1));
+    z-index: 150;
+    transition: width 60ms linear;
+    box-shadow: 0 0 12px var(--gold-3);
+  }
+
+  /* ============================================================
+     CUSTOM CURSOR (desktop only)
+     ============================================================ */
+  .cursor-dot, .cursor-ring {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 999;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    mix-blend-mode: difference;
+  }
+  .cursor-dot {
+    width: 6px;
+    height: 6px;
+    background: var(--gold-1);
+    transition: transform 80ms var(--ease-out-quart);
+  }
+  .cursor-ring {
+    width: 36px;
+    height: 36px;
+    border: 1px solid var(--gold-2);
+    transition: transform 320ms var(--ease-out-expo),
+                width 320ms var(--ease-out-expo),
+                height 320ms var(--ease-out-expo),
+                opacity 320ms var(--ease-out-expo);
+    opacity: 0.7;
+  }
+  .cursor-ring.hover {
+    width: 56px;
+    height: 56px;
+    border-color: var(--gold-1);
+    background: rgba(244, 213, 124, 0.08);
+  }
+  @media (hover: none) { .cursor-dot, .cursor-ring { display: none; } }
+
+  /* ============================================================
+     NAVBAR
+     ============================================================ */
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    padding: 1.5rem 0;
+    transition: all var(--d-med) var(--ease-out-quart);
+  }
+  .navbar.scrolled {
+    background: rgba(6, 10, 20, 0.78);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border-bottom: 1px solid var(--line);
+    padding: 0.85rem 0;
+  }
+  .nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    color: var(--ivory);
+  }
+  .logo-mark {
+    position: relative;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .logo-mark svg { width: 100%; height: 100%; }
+  .logo-mark::after {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(244, 213, 124, 0.3), transparent 70%);
+    filter: blur(8px);
+    z-index: -1;
+    animation: glow-pulse 4s ease-in-out infinite;
+  }
+  @keyframes glow-pulse {
+    0%, 100% { opacity: 0.5; transform: scale(0.95); }
+    50% { opacity: 1; transform: scale(1.1); }
+  }
+  .logo-text {
+    font-family: var(--font-display);
+    font-size: 1.35rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    line-height: 1;
+  }
+  .logo-text .sub {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    font-weight: 500;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--gold-2);
+    margin-top: 6px;
+    font-style: normal;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+    list-style: none;
+  }
+  .nav-links a {
+    color: rgba(246, 240, 227, 0.7);
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    position: relative;
+    padding: 0.4rem 0;
+  }
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0;
+    height: 1px;
+    background: var(--gold-2);
+    transition: width var(--d-med) var(--ease-out-expo);
+  }
+  .nav-links a:hover { color: var(--gold-1); }
+  .nav-links a:hover::after { width: 100%; }
+
+  .nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+  }
+
+  .lang-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 0;
+    padding: 0;
+    background: var(--mist);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    overflow: hidden;
+    backdrop-filter: blur(8px);
+  }
+  .lang-toggle button {
+    padding: 0.5rem 0.95rem;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    color: rgba(246, 240, 227, 0.5);
+    transition: all var(--d-fast);
+  }
+  .lang-toggle button.active {
+    color: var(--void);
+    background: var(--gold-2);
+  }
+  .lang-toggle button:not(.active):hover { color: var(--gold-1); }
+
+  .menu-btn {
+    display: none;
+    width: 44px;
+    height: 44px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    color: var(--ivory);
+    background: var(--mist);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+  }
+  .menu-btn span {
+    display: block;
+    height: 1.5px;
+    width: 18px;
+    background: currentColor;
+    transition: transform var(--d-fast), opacity var(--d-fast);
+  }
+  .menu-btn[aria-expanded="true"] span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+  .menu-btn[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+  .menu-btn[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+  /* ============================================================
+     HERO — Cinematic, message-first
+     ============================================================ */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    isolation: isolate;
+    padding: 7rem 1.75rem 4rem;
+  }
+
+  /* Background layers — multi-depth */
+  .hero-canvas {
+    position: absolute;
+    inset: 0;
+    z-index: -3;
+  }
+  .hero-gradient {
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    background:
+      radial-gradient(ellipse 60% 50% at 50% 35%, rgba(212, 175, 55, 0.18) 0%, transparent 70%),
+      radial-gradient(ellipse 80% 60% at 50% 100%, rgba(28, 45, 82, 0.6) 0%, transparent 70%),
+      linear-gradient(180deg, var(--void) 0%, var(--abyss) 35%, var(--midnight) 70%, var(--void) 100%);
+  }
+  .hero-vignette {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background:
+      radial-gradient(ellipse at center, transparent 30%, rgba(3, 5, 9, 0.5) 80%, var(--void) 100%);
+    pointer-events: none;
+  }
+
+  /* Central light beam */
+  .hero-beam {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1px;
+    height: 65vh;
+    background: linear-gradient(180deg, transparent 0%, rgba(244, 213, 124, 0.5) 50%, transparent 100%);
+    z-index: -1;
+    animation: beam-pulse 6s var(--ease-in-out) infinite;
+  }
+  @keyframes beam-pulse {
+    0%, 100% { opacity: 0.3; height: 60vh; }
+    50% { opacity: 1; height: 70vh; }
+  }
+  .hero-beam::before,
+  .hero-beam::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 240px;
+    height: 240px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle, rgba(244, 213, 124, 0.25) 0%, transparent 60%);
+    filter: blur(40px);
+    animation: glow-pulse 6s var(--ease-in-out) infinite;
+  }
+  .hero-beam::after {
+    width: 80px;
+    height: 80px;
+    background: radial-gradient(circle, rgba(255, 244, 204, 0.6) 0%, transparent 60%);
+    filter: blur(8px);
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 1000px;
+  }
+
+  .hero-eyebrow {
+    margin-bottom: 2.5rem;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: rise-in 1s var(--ease-out-expo) 0.2s forwards;
+  }
+
+  .hero h1 {
+    font-family: var(--font-display);
+    font-size: var(--text-hero);
+    font-weight: 300;
+    line-height: 0.95;
+    letter-spacing: -0.04em;
+    margin-bottom: 2rem;
+    font-variation-settings: "opsz" 144, "SOFT" 50;
+  }
+  .hero h1 .line {
+    display: block;
+    overflow: hidden;
+  }
+  .hero h1 .line > span {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(100%);
+    animation: line-rise 1.2s var(--ease-out-expo) forwards;
+  }
+  .hero h1 .line:nth-child(1) > span { animation-delay: 0.4s; }
+  .hero h1 .line:nth-child(2) > span { animation-delay: 0.7s; }
+  .hero h1 .line:nth-child(3) > span { animation-delay: 1.0s; }
+  .hero h1 em {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-weight: 400;
+    background: linear-gradient(180deg, var(--gold-1) 0%, var(--gold-3) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+  }
+  @keyframes line-rise {
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes rise-in {
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-sub {
+    font-family: var(--font-serif);
+    font-size: clamp(1.1rem, 0.9rem + 0.7vw, 1.4rem);
+    font-style: italic;
+    line-height: 1.55;
+    color: rgba(246, 240, 227, 0.75);
+    max-width: 620px;
+    margin: 0 auto 0.75rem;
+    font-weight: 300;
+    opacity: 0;
+    animation: rise-in 1s var(--ease-out-expo) 1.4s forwards;
+  }
+  .hero-sub-alt {
+    font-family: var(--font-sans);
+    font-size: 0.92rem;
+    color: rgba(246, 240, 227, 0.45);
+    margin-bottom: 3rem;
+    letter-spacing: 0.02em;
+    opacity: 0;
+    animation: rise-in 1s var(--ease-out-expo) 1.55s forwards;
+  }
+
+  .hero-cta {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    opacity: 0;
+    animation: rise-in 1s var(--ease-out-expo) 1.7s forwards;
+  }
+
+  .hero-foot {
+    position: absolute;
+    bottom: 2rem;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2.5rem;
+    z-index: 2;
+    opacity: 0;
+    animation: rise-in 1s var(--ease-out-expo) 2s forwards;
+  }
+  .hero-foot .scroll-cue {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: rgba(246, 240, 227, 0.5);
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+  }
+  .hero-foot .scroll-cue .bar {
+    width: 1px;
+    height: 28px;
+    background: linear-gradient(180deg, var(--gold-2), transparent);
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-foot .scroll-cue .bar::after {
+    content: '';
+    position: absolute;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(180deg, transparent, var(--gold-1), transparent);
+    animation: scroll-trickle 2.4s linear infinite;
+  }
+  @keyframes scroll-trickle {
+    to { top: 100%; }
+  }
+  .hero-foot .live-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.5rem 0.9rem;
+    background: rgba(255, 156, 84, 0.1);
+    border: 1px solid rgba(255, 156, 84, 0.3);
+    border-radius: 999px;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ember);
+  }
+  .hero-foot .live-pill .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--ember);
+    box-shadow: 0 0 10px var(--ember);
+    animation: pulse 1.8s ease-in-out infinite;
+  }
+
+  /* ============================================================
+     SCRIPTURE MARQUEE
+     ============================================================ */
+  .marquee {
+    position: relative;
+    padding: 2.5rem 0;
+    background: var(--night);
+    border-block: 1px solid var(--line);
+    overflow: hidden;
+  }
+  .marquee-track {
+    display: flex;
+    gap: 4rem;
+    animation: marquee 50s linear infinite;
+    width: max-content;
+    align-items: center;
+  }
+  @keyframes marquee {
+    to { transform: translateX(-50%); }
+  }
+  .marquee-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 4rem;
+    font-family: var(--font-display);
+    font-size: clamp(1.5rem, 1.2rem + 1.2vw, 2.4rem);
+    font-weight: 300;
+    letter-spacing: -0.01em;
+    color: rgba(246, 240, 227, 0.4);
+    white-space: nowrap;
+  }
+  .marquee-item em {
+    font-family: var(--font-serif);
+    font-style: italic;
+    color: var(--gold-2);
+  }
+  .marquee-item .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--gold-3);
+    flex-shrink: 0;
+  }
+  .marquee:hover .marquee-track { animation-play-state: paused; }
+
+  /* ============================================================
+     SECTION — The Message / Three Pillars
+     ============================================================ */
+  .message {
+    background: var(--abyss);
+    position: relative;
+  }
+  .message::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at 20% 30%, rgba(212, 175, 55, 0.06) 0%, transparent 40%),
+      radial-gradient(circle at 80% 70%, rgba(28, 45, 82, 0.4) 0%, transparent 50%);
+    pointer-events: none;
+  }
+  .message .container { position: relative; }
+
+  .pillars {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 5rem;
+  }
+  .pillar {
+    position: relative;
+    padding: 3rem 2rem 2.5rem;
+    background: linear-gradient(180deg, var(--midnight) 0%, var(--abyss) 100%);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    transition: all var(--d-med) var(--ease-out-expo);
+    overflow: hidden;
+    isolation: isolate;
+  }
+  .pillar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold-3), transparent);
+    opacity: 0;
+    transition: opacity var(--d-med) var(--ease-out-expo);
+  }
+  .pillar::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 50% 0%, rgba(212, 175, 55, 0.08) 0%, transparent 50%);
+    opacity: 0;
+    transition: opacity var(--d-med) var(--ease-out-expo);
+    pointer-events: none;
+    z-index: -1;
+  }
+  .pillar:hover { transform: translateY(-6px); border-color: var(--line-gold); }
+  .pillar:hover::before, .pillar:hover::after { opacity: 1; }
+
+  .pillar-num {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    color: var(--gold-3);
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .pillar-num::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--line);
+  }
+
+  .pillar h3 {
+    font-size: clamp(1.6rem, 1.3rem + 0.8vw, 2rem);
+    font-weight: 400;
+    margin-bottom: 0.4rem;
+    line-height: 1.1;
+  }
+  .pillar h3 em {
+    font-family: var(--font-serif);
+    font-style: italic;
+    color: var(--gold-2);
+    font-weight: 400;
+  }
+  .pillar .sub {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 1.05rem;
+    color: var(--gold-2);
+    margin-bottom: 1.5rem;
+    font-weight: 300;
+  }
+  .pillar p {
+    color: rgba(246, 240, 227, 0.65);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+  }
+  .pillar .verse {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold-3);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .pillar .verse::before {
+    content: '';
+    width: 12px;
+    height: 1px;
+    background: var(--gold-3);
+  }
+
+  /* ============================================================
+     SECTION — Plan of Salvation (Acts 2:38 journey)
+     ============================================================ */
+  .salvation {
+    background: var(--void);
+    position: relative;
+    overflow: hidden;
+  }
+  .salvation::before {
+    content: '';
+    position: absolute;
+    top: 0; bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1px;
+    background: linear-gradient(180deg, transparent, var(--line-gold) 20%, var(--line-gold) 80%, transparent);
+    z-index: 0;
+  }
+  .salvation::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.04) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  .salvation .container { position: relative; z-index: 1; }
+
+  .steps {
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+    margin-top: 5rem;
+  }
+  .step {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+  .step-visual {
+    position: relative;
+    aspect-ratio: 1;
+    max-width: 320px;
+    width: 100%;
+    justify-self: center;
+  }
+  .step-visual .ring {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    border: 1px solid var(--line-gold);
+    animation: rotate 40s linear infinite;
+  }
+  .step-visual .ring:nth-child(2) {
+    inset: 12%;
+    border-style: dashed;
+    animation-duration: 25s;
+    animation-direction: reverse;
+  }
+  .step-visual .ring:nth-child(3) {
+    inset: 24%;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.08) 0%, transparent 70%);
+    border-color: transparent;
+  }
+  @keyframes rotate {
+    to { transform: rotate(360deg); }
+  }
+  .step-visual .num {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-display);
+    font-size: clamp(4rem, 3rem + 4vw, 6.5rem);
+    font-weight: 300;
+    color: var(--gold-2);
+    font-variation-settings: "opsz" 144;
+    line-height: 1;
+  }
+  .step-visual .icon {
+    position: absolute;
+    bottom: 8%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--gold-2);
+    background: var(--void);
+    padding: 0.75rem;
+    border: 1px solid var(--line-gold);
+    border-radius: 50%;
+  }
+  .step-visual .icon svg { width: 24px; height: 24px; }
+
+  .step-content {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    text-align: center;
+    max-width: 640px;
+    margin: 0 auto;
+  }
+  .step.reverse .step-visual { order: 2; }
+  .step .verse-ref {
+    font-family: var(--font-mono);
+    font-size: 0.74rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold-3);
+    margin-bottom: 1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+  .step .verse-ref::before, .step .verse-ref::after {
+    content: '';
+    width: 24px;
+    height: 1px;
+    background: var(--gold-3);
+  }
+  .step h3 {
+    font-size: clamp(2rem, 1.5rem + 1.5vw, 2.75rem);
+    font-weight: 400;
+    margin-bottom: 0.6rem;
+    line-height: 1.1;
+  }
+  .step h3 em {
+    font-family: var(--font-serif);
+    font-style: italic;
+    color: var(--gold-2);
+  }
+  .step .step-sub {
+    font-family: var(--font-serif);
+    font-size: 1.25rem;
+    font-style: italic;
+    color: var(--gold-2);
+    margin-bottom: 1.5rem;
+    font-weight: 300;
+  }
+  .step p {
+    color: rgba(246, 240, 227, 0.7);
+    font-size: 1.05rem;
+    line-height: 1.75;
+    margin-bottom: 1.5rem;
+  }
+  .step blockquote {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--gold-1);
+    padding: 1.25rem 1.5rem;
+    border-left: 1px solid var(--gold-3);
+    background: rgba(212, 175, 55, 0.04);
+    margin: 1.5rem auto;
+    max-width: 540px;
+    text-align: left;
+  }
+
+  /* ============================================================
+     SECTION — About IANJ
+     ============================================================ */
+  .about {
+    background: var(--abyss);
+    position: relative;
+  }
+  .about-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+  }
+  .about-visual {
+    position: relative;
+    aspect-ratio: 4/5;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .about-visual::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 40%, var(--void) 100%);
+    z-index: 1;
+  }
+  .about-visual::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at 30% 30%, rgba(212, 175, 55, 0.2) 0%, transparent 50%),
+      linear-gradient(135deg, var(--midnight) 0%, var(--abyss) 100%);
+    z-index: 0;
+  }
+  .about-visual svg {
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    width: 60%;
+    height: 60%;
+    color: var(--gold-2);
+    opacity: 0.5;
+    z-index: 1;
+    animation: gentle-float 6s ease-in-out infinite;
+  }
+  @keyframes gentle-float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+  }
+  .about-visual .quote {
+    position: absolute;
+    bottom: 2rem;
+    left: 2rem;
+    right: 2rem;
+    z-index: 2;
+    color: var(--ivory);
+  }
+  .about-visual .quote .ref {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold-2);
+    margin-bottom: 0.75rem;
+    display: block;
+  }
+  .about-visual .quote p {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 1.15rem;
+    line-height: 1.4;
+    color: var(--ivory);
+  }
+
+  .about-content p {
+    color: rgba(246, 240, 227, 0.7);
+    font-size: 1.05rem;
+    line-height: 1.85;
+    margin-bottom: 1.25rem;
+  }
+  .about-content .lead {
+    font-family: var(--font-serif);
+    font-size: clamp(1.4rem, 1.2rem + 0.6vw, 1.7rem);
+    font-style: italic;
+    color: var(--ivory);
+    line-height: 1.4;
+    margin-bottom: 1.75rem;
+    font-weight: 300;
+  }
+  .about-content .full-name {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.25rem;
+    padding: 1.5rem 1.75rem;
+    margin: 2rem 0;
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.06), transparent);
+    border: 1px solid var(--line-gold);
+    border-radius: 4px;
+  }
+  .about-content .full-name .icon {
+    color: var(--gold-2);
+    flex-shrink: 0;
+    margin-top: 4px;
+  }
+  .about-content .full-name .label {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold-3);
+    margin-bottom: 6px;
+  }
+  .about-content .full-name .name {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    color: var(--ivory);
+    font-style: italic;
+    font-weight: 400;
+    line-height: 1.2;
+  }
+
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid var(--line);
+  }
+  .stat .num {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 1.5rem + 1.5vw, 2.75rem);
+    font-weight: 400;
+    color: var(--gold-2);
+    line-height: 1;
+    font-variation-settings: "opsz" 144;
+  }
+  .stat .num sup {
+    font-size: 0.5em;
+    color: var(--gold-3);
+    margin-left: 2px;
+  }
+  .stat .label {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(246, 240, 227, 0.5);
+    margin-top: 0.6rem;
+  }
+
+  /* ============================================================
+     SECTION — Services
+     ============================================================ */
+  .services {
+    background: var(--void);
+  }
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+  .service-card {
+    position: relative;
+    padding: 2.5rem 2rem;
+    background: var(--abyss);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    overflow: hidden;
+    transition: all var(--d-med) var(--ease-out-expo);
+  }
+  .service-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 50% 0%, rgba(212, 175, 55, 0.1) 0%, transparent 50%);
+    opacity: 0;
+    transition: opacity var(--d-med) var(--ease-out-expo);
+  }
+  .service-card:hover {
+    border-color: var(--line-gold);
+    transform: translateY(-4px);
+  }
+  .service-card:hover::before { opacity: 1; }
+  .service-card > * { position: relative; }
+  .service-card .day {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold-3);
+    margin-bottom: 1rem;
+  }
+  .service-card .time {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 2rem + 1.5vw, 3.25rem);
+    font-weight: 300;
+    color: var(--ivory);
+    line-height: 0.95;
+    margin-bottom: 0.5rem;
+    font-variation-settings: "opsz" 144;
+  }
+  .service-card .time .period {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--gold-2);
+    margin-left: 6px;
+    font-weight: 400;
+  }
+  .service-card .meta {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 1rem;
+    color: rgba(246, 240, 227, 0.55);
+  }
+
+  .address-block {
+    margin-top: 3rem;
+    padding: 2rem;
+    background: linear-gradient(135deg, var(--midnight), var(--abyss));
+    border: 1px solid var(--line-gold);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+  .address-block .icon {
+    width: 52px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(212, 175, 55, 0.12);
+    border: 1px solid var(--line-gold);
+    border-radius: 50%;
+    color: var(--gold-2);
+    flex-shrink: 0;
+  }
+  .address-block .info { flex: 1; min-width: 200px; }
+  .address-block .label {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold-2);
+    margin-bottom: 4px;
+  }
+  .address-block .value {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    color: var(--ivory);
+    font-weight: 400;
+  }
+  .address-block .btn-text { flex-shrink: 0; }
+
+  /* ============================================================
+     SECTION — Ministries
+     ============================================================ */
+  .ministries {
+    background: var(--abyss);
+    position: relative;
+  }
+  .ministries-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .ministry {
+    position: relative;
+    padding: 2.5rem 2rem;
+    background: var(--abyss);
+    transition: background var(--d-med) var(--ease-out-expo);
+    overflow: hidden;
+    isolation: isolate;
+  }
+  .ministry::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, rgba(212, 175, 55, 0.08) 0%, transparent 60%);
+    opacity: 0;
+    transition: opacity var(--d-med) var(--ease-out-expo);
+    z-index: -1;
+  }
+  .ministry:hover { background: var(--midnight); }
+  .ministry:hover::before { opacity: 1; }
+
+  .ministry-num {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.22em;
+    color: rgba(246, 240, 227, 0.4);
+    margin-bottom: 1.5rem;
+  }
+  .ministry .icon {
+    color: var(--gold-2);
+    margin-bottom: 1.5rem;
+    transition: transform var(--d-med) var(--ease-out-expo);
+  }
+  .ministry:hover .icon { transform: scale(1.08) rotate(-3deg); }
+  .ministry .icon svg { width: 38px; height: 38px; }
+  .ministry h3 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 0.3rem;
+  }
+  .ministry h3 em {
+    font-family: var(--font-serif);
+    font-style: italic;
+    color: var(--gold-2);
+    font-size: 0.9em;
+    margin-left: 0.5rem;
+    font-weight: 400;
+  }
+  .ministry p {
+    color: rgba(246, 240, 227, 0.6);
+    font-size: 0.92rem;
+    line-height: 1.7;
+  }
+
+  /* ============================================================
+     SECTION — Visit / Form
+     ============================================================ */
+  .visit {
+    background: var(--void);
+    position: relative;
+    overflow: hidden;
+  }
+  .visit::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80vw;
+    height: 80vw;
+    max-width: 1000px;
+    max-height: 1000px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.06) 0%, transparent 60%);
+    z-index: 0;
+  }
+  .visit .container-narrow { position: relative; z-index: 1; }
+  .visit-card {
+    background: linear-gradient(180deg, rgba(10, 18, 38, 0.7), rgba(8, 13, 28, 0.7));
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--line-gold);
+    border-radius: 8px;
+    padding: clamp(2rem, 4vw, 3.5rem);
+    position: relative;
+    overflow: hidden;
+  }
+  .visit-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold-2), transparent);
+  }
+
+  .visit-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.15fr;
+    gap: 3.5rem;
+    align-items: start;
+  }
+  .visit-intro h2 {
+    font-size: var(--text-3xl);
+    margin-bottom: 0.5rem;
+  }
+  .visit-intro h2 em {
+    font-family: var(--font-serif);
+    font-style: italic;
+    color: var(--gold-2);
+  }
+  .visit-intro .sub {
+    font-family: var(--font-serif);
+    font-style: italic;
+    color: var(--gold-2);
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+    font-weight: 300;
+  }
+  .visit-intro p {
+    color: rgba(246, 240, 227, 0.65);
+    line-height: 1.75;
+    margin-bottom: 1.75rem;
+  }
+  .promise-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+  }
+  .promise-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.85rem;
+    color: rgba(246, 240, 227, 0.85);
+    font-size: 0.95rem;
+  }
+  .promise-list li svg {
+    width: 20px;
+    height: 20px;
+    color: var(--gold-2);
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .form { display: grid; gap: 1.25rem; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .field { display: flex; flex-direction: column; gap: 0.5rem; }
+  .field label {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: rgba(246, 240, 227, 0.55);
+  }
+  .field input,
+  .field select {
+    width: 100%;
+    padding: 1rem 1.1rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    color: var(--ivory);
+    font-size: 0.95rem;
+    transition: all var(--d-med) var(--ease-out-expo);
+    min-height: 52px;
+  }
+  .field input::placeholder { color: rgba(246, 240, 227, 0.3); }
+  .field input:focus,
+  .field select:focus {
+    outline: none;
+    border-color: var(--gold-2);
+    background: rgba(212, 175, 55, 0.04);
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+  }
+  .field select {
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath fill='%23f4d57c' d='M5 6L0 0h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1.1rem center;
+    background-size: 10px;
+    padding-right: 2.5rem;
+  }
+  .field select option { background: var(--midnight); color: var(--ivory); }
+  .form-submit { width: 100%; margin-top: 0.5rem; }
+
+  /* ============================================================
+     FOOTER
+     ============================================================ */
+  .footer {
+    background: var(--void);
+    color: rgba(246, 240, 227, 0.55);
+    padding: 5.5rem 0 2.5rem;
+    position: relative;
+    border-top: 1px solid var(--line);
+  }
+  .footer::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 280px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold-2), transparent);
+  }
+  .footer-verse {
+    text-align: center;
+    padding-bottom: 4rem;
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 4rem;
+  }
+  .footer-verse .ref {
+    font-family: var(--font-mono);
+    font-size: 0.74rem;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--gold-2);
+    margin-bottom: 1.5rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.85rem;
+  }
+  .footer-verse .ref::before, .footer-verse .ref::after {
+    content: '';
+    width: 32px;
+    height: 1px;
+    background: var(--gold-3);
+  }
+  .footer-verse blockquote {
+    font-family: var(--font-display);
+    font-size: clamp(1.4rem, 1.1rem + 1.2vw, 2.1rem);
+    font-weight: 300;
+    color: var(--ivory);
+    line-height: 1.4;
+    max-width: 720px;
+    margin: 0 auto;
+    font-style: italic;
+    font-variation-settings: "opsz" 144;
+  }
+  .footer-verse blockquote em {
+    font-family: var(--font-serif);
+    background: linear-gradient(180deg, var(--gold-1), var(--gold-3));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 3.5rem;
+  }
+  .footer-brand .logo { margin-bottom: 1.5rem; }
+  .footer-brand p {
+    font-family: var(--font-serif);
+    font-style: italic;
+    color: rgba(246, 240, 227, 0.55);
+    line-height: 1.6;
+    max-width: 340px;
+    margin-bottom: 1.5rem;
+  }
+  .footer-col h4 {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold-2);
+    margin-bottom: 1.25rem;
+    font-style: normal;
+  }
+  .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; }
+  .footer-col a {
+    color: rgba(246, 240, 227, 0.55);
+    font-size: 0.9rem;
+    transition: color var(--d-fast);
+  }
+  .footer-col a:hover { color: var(--gold-1); }
+  .footer-col .item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.7rem;
+    color: rgba(246, 240, 227, 0.6);
+    font-size: 0.9rem;
+    line-height: 1.55;
+  }
+  .footer-col .item svg {
+    width: 16px;
+    height: 16px;
+    color: var(--gold-2);
+    flex-shrink: 0;
+    margin-top: 3px;
+  }
+
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 2.5rem;
+    border-top: 1px solid var(--line);
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+  .footer-bottom p {
+    font-family: var(--font-mono);
+    font-size: 0.74rem;
+    letter-spacing: 0.04em;
+    color: rgba(246, 240, 227, 0.35);
+  }
+  .socials { display: flex; gap: 0.75rem; }
+  .socials a {
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--line);
+    border-radius: 50%;
+    color: rgba(246, 240, 227, 0.6);
+    transition: all var(--d-med) var(--ease-out-expo);
+  }
+  .socials a:hover {
+    background: var(--gold-2);
+    color: var(--void);
+    border-color: var(--gold-2);
+    transform: translateY(-3px);
+  }
+  .socials svg { width: 18px; height: 18px; }
+
+  /* ============================================================
+     REVEAL ANIMATIONS
+     ============================================================ */
+  .reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 1.2s var(--ease-out-expo), transform 1.2s var(--ease-out-expo);
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  .reveal-stagger > * {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 1s var(--ease-out-expo), transform 1s var(--ease-out-expo);
+  }
+  .reveal-stagger.visible > * { opacity: 1; transform: translateY(0); }
+  .reveal-stagger.visible > *:nth-child(1) { transition-delay: 0ms; }
+  .reveal-stagger.visible > *:nth-child(2) { transition-delay: 120ms; }
+  .reveal-stagger.visible > *:nth-child(3) { transition-delay: 240ms; }
+  .reveal-stagger.visible > *:nth-child(4) { transition-delay: 360ms; }
+  .reveal-stagger.visible > *:nth-child(5) { transition-delay: 480ms; }
+  .reveal-stagger.visible > *:nth-child(6) { transition-delay: 600ms; }
+
+  /* ============================================================
+     RESPONSIVE
+     ============================================================ */
+  @media (max-width: 1024px) {
+    .pillars { grid-template-columns: 1fr; }
+    .ministries-grid { grid-template-columns: repeat(2, 1fr); }
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+    .step { grid-template-columns: 1fr; gap: 2rem; }
+    .step-visual { max-width: 240px; }
+  }
+
+  @media (max-width: 900px) {
+    .nav-links {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 1rem;
+      right: 1rem;
+      background: rgba(8, 13, 28, 0.98);
+      backdrop-filter: blur(24px);
+      flex-direction: column;
+      padding: 1.5rem;
+      gap: 0.25rem;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      margin-top: 0.75rem;
+    }
+    .nav-links.open { display: flex; }
+    .nav-links a {
+      padding: 1rem 0;
+      width: 100%;
+      border-bottom: 1px solid var(--line);
+      font-size: 1rem;
+    }
+    .menu-btn { display: flex; }
+
+    .about-inner { grid-template-columns: 1fr; gap: 3rem; }
+    .about-visual { max-height: 480px; aspect-ratio: 4/3; }
+    .services-grid { grid-template-columns: 1fr; }
+    .visit-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .footer-grid { grid-template-columns: 1fr; }
+    .hero-foot { padding: 0 1.5rem; }
+  }
+
+  @media (max-width: 560px) {
+    .ministries-grid { grid-template-columns: 1fr; }
+    .stats { grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+    .form-row { grid-template-columns: 1fr; }
+    .footer-bottom { flex-direction: column; text-align: center; }
+    .hero-cta { flex-direction: column; width: 100%; max-width: 320px; margin: 0 auto; }
+    .hero-cta .btn { width: 100%; }
+    .hero-foot { flex-direction: column; gap: 1rem; padding-bottom: 0.5rem; bottom: 1rem; }
+    .step-visual .num { font-size: 4rem; }
+    .marquee-item { font-size: 1.5rem; gap: 2rem; }
+    .marquee-track { gap: 2rem; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+    .reveal, .reveal-stagger > * { opacity: 1; transform: none; }
+    .marquee-track { animation: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="progress-bar" id="progressBar" aria-hidden="true"></div>
+<div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+<div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+
+<!-- ============================================================
+     NAVBAR
+     ============================================================ -->
+<header class="navbar" id="navbar">
+  <div class="container nav-inner">
+    <a href="#top" class="logo" aria-label="IANJ home">
+      <span class="logo-mark" aria-hidden="true">
+        <svg viewBox="0 0 44 44" fill="none">
+          <circle cx="22" cy="22" r="21" stroke="url(#logoGrad)" stroke-width="1"/>
+          <path d="M22 8v28M14 18h16" stroke="url(#logoGrad)" stroke-width="1.5" stroke-linecap="round"/>
+          <defs>
+            <linearGradient id="logoGrad" x1="0" y1="0" x2="44" y2="44">
+              <stop offset="0%" stop-color="#fff4cc"/>
+              <stop offset="100%" stop-color="#d4af37"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </span>
+      <span class="logo-text">
+        IANJ
+        <span class="sub" data-en="Apostolic Church" data-es="Iglesia Apostólica">Apostolic Church</span>
+      </span>
+    </a>
+
+    <nav aria-label="Main navigation">
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#top" data-en="Home" data-es="Inicio">Home</a></li>
+        <li><a href="#message" data-en="The Message" data-es="El Mensaje">The Message</a></li>
+        <li><a href="#salvation" data-en="Salvation" data-es="Salvación">Salvation</a></li>
+        <li><a href="#about" data-en="About" data-es="Nosotros">About</a></li>
+        <li><a href="#services" data-en="Services" data-es="Servicios">Services</a></li>
+        <li><a href="#ministries" data-en="Ministries" data-es="Ministerios">Ministries</a></li>
+        <li><a href="#visit" data-en="Visit" data-es="Visítanos">Visit</a></li>
+      </ul>
+    </nav>
+
+    <div class="nav-actions">
+      <div class="lang-toggle" role="group" aria-label="Language">
+        <button data-lang="en" class="active">EN</button>
+        <button data-lang="es">ES</button>
+      </div>
+      <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="navLinks" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ============================================================
+     HERO
+     ============================================================ -->
+<section class="hero" id="top">
+  <canvas class="hero-canvas" id="heroCanvas" aria-hidden="true"></canvas>
+  <div class="hero-gradient" aria-hidden="true"></div>
+  <div class="hero-vignette" aria-hidden="true"></div>
+  <div class="hero-beam" aria-hidden="true"></div>
+
+  <div class="hero-content">
+    <div class="hero-eyebrow">
+      <span class="scripture-chip">
+        <span data-en="Acts 4:12" data-es="Hechos 4:12">Acts 4:12</span>
+      </span>
+    </div>
+
+    <h1>
+      <span class="line"><span data-en="There is salvation" data-es="En ningún otro hay">There is salvation</span></span>
+      <span class="line"><span data-en="in no other" data-es="salvación, porque no">in no other</span></span>
+      <span class="line"><em data-en="Name." data-es="hay otro Nombre.">Name.</em></span>
+    </h1>
+
+    <p class="hero-sub" data-en="Jesus Christ alone. Crucified, risen, glorified — the only Name under heaven given among men by which we must be saved." data-es="Jesucristo, y sólo Él. Crucificado, resucitado, glorificado — el único Nombre dado a los hombres bajo el cielo por el cual debemos ser salvos.">Jesus Christ alone. Crucified, risen, glorified — the only Name under heaven given among men by which we must be saved.</p>
+    <p class="hero-sub-alt" data-en="Iglesia Apostólica del Nombre de Jesucristo" data-es="Iglesia Apostólica del Nombre de Jesucristo">Iglesia Apostólica del Nombre de Jesucristo</p>
+
+    <div class="hero-cta">
+      <a href="#salvation" class="btn btn-primary" data-magnetic>
+        <span data-en="Discover the Message" data-es="Descubre el Mensaje">Discover the Message</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+      <a href="#visit" class="btn btn-ghost" data-magnetic>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <span data-en="Plan a Visit" data-es="Planea una Visita">Plan a Visit</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="hero-foot">
+    <div class="scroll-cue">
+      <span class="bar" aria-hidden="true"></span>
+      <span data-en="Scroll to begin" data-es="Desliza para comenzar">Scroll to begin</span>
+    </div>
+    <div class="live-pill">
+      <span class="dot" aria-hidden="true"></span>
+      <span data-en="Live Sundays · 11AM" data-es="En Vivo Domingos · 11AM">Live Sundays · 11AM</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SCRIPTURE MARQUEE
+     ============================================================ -->
+<section class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <div class="marquee-item">
+      <span data-en="Jesus is Lord" data-es="Jesús es Señor">Jesus is Lord</span>
+      <span class="dot"></span>
+      <em data-en="No hay otro Nombre" data-es="No hay otro Nombre">No hay otro Nombre</em>
+      <span class="dot"></span>
+      <span data-en="Acts 4:12" data-es="Hechos 4:12">Acts 4:12</span>
+      <span class="dot"></span>
+      <em data-en="Salvation in His Name" data-es="Salvación en Su Nombre">Salvation in His Name</em>
+      <span class="dot"></span>
+      <span data-en="Repent · Be Baptized · Receive" data-es="Arrepiéntete · Bautízate · Recibe">Repent · Be Baptized · Receive</span>
+      <span class="dot"></span>
+    </div>
+    <div class="marquee-item">
+      <span data-en="Jesus is Lord" data-es="Jesús es Señor">Jesus is Lord</span>
+      <span class="dot"></span>
+      <em data-en="No hay otro Nombre" data-es="No hay otro Nombre">No hay otro Nombre</em>
+      <span class="dot"></span>
+      <span data-en="Acts 4:12" data-es="Hechos 4:12">Acts 4:12</span>
+      <span class="dot"></span>
+      <em data-en="Salvation in His Name" data-es="Salvación en Su Nombre">Salvation in His Name</em>
+      <span class="dot"></span>
+      <span data-en="Repent · Be Baptized · Receive" data-es="Arrepiéntete · Bautízate · Recibe">Repent · Be Baptized · Receive</span>
+      <span class="dot"></span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     THE MESSAGE / Three Pillars
+     ============================================================ -->
+<section class="section message" id="message">
+  <div class="container">
+    <div class="section-header center reveal">
+      <span class="eyebrow" data-en="The Message" data-es="El Mensaje">The Message</span>
+      <h2 class="section-title">
+        <span data-en="One Lord. One Faith." data-es="Un Señor. Una Fe.">One Lord. One Faith.</span>
+        <em data-en="One Baptism." data-es="Un Bautismo.">One Baptism.</em>
+      </h2>
+      <p class="section-lead" data-en="The unchanging gospel preached by the Apostles — that Jesus Christ is the fullness of God, that there is no other Name by which we must be saved, and that His Spirit indwells those who obey." data-es="El evangelio inmutable predicado por los Apóstoles — que Jesucristo es la plenitud de Dios, que no hay otro Nombre por el cual debamos ser salvos, y que Su Espíritu mora en quienes Le obedecen.">The unchanging gospel preached by the Apostles — that Jesus Christ is the fullness of God, that there is no other Name by which we must be saved, and that His Spirit indwells those who obey.</p>
+    </div>
+
+    <div class="pillars reveal-stagger">
+      <article class="pillar">
+        <div class="pillar-num">I · <span data-en="The Identity" data-es="La Identidad">The Identity</span></div>
+        <h3>
+          <span data-en="Jesus is" data-es="Jesús es">Jesus is</span>
+          <em data-en="God" data-es="Dios">God</em>
+        </h3>
+        <p class="sub" data-en="The fullness of the Godhead in bodily form." data-es="La plenitud de la Deidad corporalmente.">The fullness of the Godhead in bodily form.</p>
+        <p data-en="The eternal Father revealed in the Son. The Word made flesh. The Almighty One who came in the likeness of man to redeem us — Father, Son, and Holy Spirit are the one and only God revealed through Jesus Christ." data-es="El Padre eterno revelado en el Hijo. El Verbo hecho carne. El Todopoderoso que vino en semejanza de hombre para redimirnos — Padre, Hijo y Espíritu Santo son el único Dios revelado a través de Jesucristo.">The eternal Father revealed in the Son. The Word made flesh. The Almighty One who came in the likeness of man to redeem us — Father, Son, and Holy Spirit are the one and only God revealed through Jesus Christ.</p>
+        <div class="verse" data-en="Colossians 2:9 · 1 Timothy 3:16" data-es="Colosenses 2:9 · 1 Timoteo 3:16">Colossians 2:9 · 1 Timothy 3:16</div>
+      </article>
+
+      <article class="pillar">
+        <div class="pillar-num">II · <span data-en="The Salvation" data-es="La Salvación">The Salvation</span></div>
+        <h3>
+          <span data-en="Salvation in His" data-es="Salvación en Su">Salvation in His</span>
+          <em data-en="Name" data-es="Nombre">Name</em>
+        </h3>
+        <p class="sub" data-en="No other Name. No other way." data-es="Ningún otro Nombre. Ningún otro camino.">No other Name. No other way.</p>
+        <p data-en="Salvation is not earned by works, religion, or human merit. It is found exclusively in the crucified, buried, and risen Jesus Christ — His blood, His Name, His finished work on the cross." data-es="La salvación no se gana con obras, religión o mérito humano. Se encuentra exclusivamente en el Jesucristo crucificado, sepultado y resucitado — Su sangre, Su Nombre, Su obra consumada en la cruz.">Salvation is not earned by works, religion, or human merit. It is found exclusively in the crucified, buried, and risen Jesus Christ — His blood, His Name, His finished work on the cross.</p>
+        <div class="verse" data-en="Acts 4:12 · John 14:6" data-es="Hechos 4:12 · Juan 14:6">Acts 4:12 · John 14:6</div>
+      </article>
+
+      <article class="pillar">
+        <div class="pillar-num">III · <span data-en="The Spirit" data-es="El Espíritu">The Spirit</span></div>
+        <h3>
+          <span data-en="The Holy" data-es="El Espíritu">The Holy</span>
+          <em data-en="Spirit" data-es="Santo">Spirit</em>
+        </h3>
+        <p class="sub" data-en="A real baptism, a real fire, a real life." data-es="Un bautismo real, un fuego real, una vida real.">A real baptism, a real fire, a real life.</p>
+        <p data-en="The same Spirit that filled the apostles in Acts 2 still fills hungry hearts today. He is not a metaphor — He is the very presence of God indwelling, empowering, sanctifying, and sealing the believer." data-es="El mismo Espíritu que llenó a los apóstoles en Hechos 2 todavía llena hoy a los corazones hambrientos. Él no es una metáfora — es la presencia misma de Dios morando, capacitando, santificando y sellando al creyente.">The same Spirit that filled the apostles in Acts 2 still fills hungry hearts today. He is not a metaphor — He is the very presence of God indwelling, empowering, sanctifying, and sealing the believer.</p>
+        <div class="verse" data-en="Acts 2:4 · Romans 8:9" data-es="Hechos 2:4 · Romanos 8:9">Acts 2:4 · Romans 8:9</div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     PLAN OF SALVATION — Acts 2:38 journey
+     ============================================================ -->
+<section class="section salvation" id="salvation">
+  <div class="container-narrow">
+    <div class="section-header center reveal">
+      <span class="eyebrow" data-en="Acts 2:38 · The Plan" data-es="Hechos 2:38 · El Plan">Acts 2:38 · The Plan</span>
+      <h2 class="section-title">
+        <span data-en="How to be" data-es="Cómo ser">How to be</span>
+        <em data-en="saved." data-es="salvo.">saved.</em>
+      </h2>
+      <p class="section-lead" data-en="When the multitude on the Day of Pentecost asked the apostles 'What shall we do?', Peter gave a clear, three-fold answer. It has not changed." data-es="Cuando la multitud en el día de Pentecostés preguntó a los apóstoles '¿Qué haremos?', Pedro dio una respuesta clara y triple. No ha cambiado.">When the multitude on the Day of Pentecost asked the apostles 'What shall we do?', Peter gave a clear, three-fold answer. It has not changed.</p>
+    </div>
+
+    <div class="steps">
+      <article class="step reveal">
+        <div class="step-visual">
+          <span class="ring"></span>
+          <span class="ring"></span>
+          <span class="ring"></span>
+          <span class="num">01</span>
+          <span class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9 9 0 0 0-9 9z"/><path d="M3 4v5h5M12 7v5l3 2"/></svg>
+          </span>
+        </div>
+        <div class="step-content">
+          <div class="verse-ref" data-en="Acts 2:38a" data-es="Hechos 2:38a">Acts 2:38a</div>
+          <h3>
+            <em data-en="Repent" data-es="Arrepiéntete">Repent</em>
+          </h3>
+          <p class="step-sub" data-en="Turn from sin. Turn toward God." data-es="Aléjate del pecado. Vuélvete a Dios.">Turn from sin. Turn toward God.</p>
+          <p data-en="Repentance is more than feeling sorry — it is a decisive turning. Acknowledge that you have sinned, choose to abandon that life, and ask Jesus Christ for forgiveness. He is faithful and just to forgive every soul that comes to Him in honesty." data-es="El arrepentimiento es más que sentir tristeza — es un giro decisivo. Reconoce que has pecado, elige abandonar esa vida, y pide perdón a Jesucristo. Él es fiel y justo para perdonar a toda alma que viene a Él con honestidad.">Repentance is more than feeling sorry — it is a decisive turning. Acknowledge that you have sinned, choose to abandon that life, and ask Jesus Christ for forgiveness. He is faithful and just to forgive every soul that comes to Him in honesty.</p>
+          <blockquote data-en="'Repent ye therefore, and be converted, that your sins may be blotted out.' — Acts 3:19" data-es="'Así que, arrepentíos y convertíos, para que sean borrados vuestros pecados.' — Hechos 3:19">'Repent ye therefore, and be converted, that your sins may be blotted out.' — Acts 3:19</blockquote>
+        </div>
+      </article>
+
+      <article class="step reverse reveal">
+        <div class="step-visual">
+          <span class="ring"></span>
+          <span class="ring"></span>
+          <span class="ring"></span>
+          <span class="num">02</span>
+          <span class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l3 5-3 5-3-5 3-5z"/><path d="M3 16c2 2 4 2 6 0s4-2 6 0 4 2 6 0"/><path d="M3 20c2 2 4 2 6 0s4-2 6 0 4 2 6 0"/></svg>
+          </span>
+        </div>
+        <div class="step-content">
+          <div class="verse-ref" data-en="Acts 2:38b" data-es="Hechos 2:38b">Acts 2:38b</div>
+          <h3>
+            <span data-en="Be baptized in the" data-es="Bautízate en el">Be baptized in the</span>
+            <em data-en="Name of Jesus" data-es="Nombre de Jesús">Name of Jesus</em>
+          </h3>
+          <p class="step-sub" data-en="A burial with Him. A new birth in Him." data-es="Una sepultura con Él. Un nuevo nacimiento en Él.">A burial with Him. A new birth in Him.</p>
+          <p data-en="Water baptism by full immersion, invoking the saving Name of Jesus Christ, is the apostolic pattern from Pentecost forward. It is not a symbol added later — it is the moment your old life is buried and Christ Himself washes away your sins." data-es="El bautismo en agua por inmersión completa, invocando el Nombre salvador de Jesucristo, es el patrón apostólico desde Pentecostés en adelante. No es un símbolo añadido después — es el momento en que tu vieja vida es sepultada y Cristo mismo lava tus pecados.">Water baptism by full immersion, invoking the saving Name of Jesus Christ, is the apostolic pattern from Pentecost forward. It is not a symbol added later — it is the moment your old life is buried and Christ Himself washes away your sins.</p>
+          <blockquote data-en="'And now why tarriest thou? arise, and be baptized, and wash away thy sins, calling on the name of the Lord.' — Acts 22:16" data-es="'Y ahora, ¿por qué te detienes? Levántate y bautízate, y lava tus pecados, invocando Su Nombre.' — Hechos 22:16">'And now why tarriest thou? arise, and be baptized, and wash away thy sins, calling on the name of the Lord.' — Acts 22:16</blockquote>
+        </div>
+      </article>
+
+      <article class="step reveal">
+        <div class="step-visual">
+          <span class="ring"></span>
+          <span class="ring"></span>
+          <span class="ring"></span>
+          <span class="num">03</span>
+          <span class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c-1 4-4 6-7 7 3 1 6 3 7 7 1-4 4-6 7-7-3-1-6-3-7-7z"/></svg>
+          </span>
+        </div>
+        <div class="step-content">
+          <div class="verse-ref" data-en="Acts 2:38c" data-es="Hechos 2:38c">Acts 2:38c</div>
+          <h3>
+            <span data-en="Receive the" data-es="Recibe el">Receive the</span>
+            <em data-en="Holy Spirit" data-es="Espíritu Santo">Holy Spirit</em>
+          </h3>
+          <p class="step-sub" data-en="The promise is for you, and your children, and all who are far off." data-es="La promesa es para ti, y para tus hijos, y para todos los que están lejos.">The promise is for you, and your children, and all who are far off.</p>
+          <p data-en="The same Spirit poured out in Acts 2 — accompanied by speaking with new tongues as the Spirit gives utterance — is still being poured out today on hungry, surrendered hearts. This is the new birth Jesus spoke of in John 3. This is the seal of the believer." data-es="El mismo Espíritu derramado en Hechos 2 — acompañado del hablar en nuevas lenguas según el Espíritu da que hablen — sigue siendo derramado hoy sobre corazones hambrientos y rendidos. Este es el nuevo nacimiento del que habló Jesús en Juan 3. Este es el sello del creyente.">The same Spirit poured out in Acts 2 — accompanied by speaking with new tongues as the Spirit gives utterance — is still being poured out today on hungry, surrendered hearts. This is the new birth Jesus spoke of in John 3. This is the seal of the believer.</p>
+          <blockquote data-en="'For the promise is unto you, and to your children, and to all that are afar off.' — Acts 2:39" data-es="'Porque para vosotros es la promesa, y para vuestros hijos, y para todos los que están lejos.' — Hechos 2:39">'For the promise is unto you, and to your children, and to all that are afar off.' — Acts 2:39</blockquote>
+        </div>
+      </article>
+    </div>
+
+    <div style="text-align:center; margin-top: 5rem;" class="reveal">
+      <a href="#visit" class="btn btn-primary" data-magnetic>
+        <span data-en="Come and Be Saved" data-es="Ven y Sé Salvo">Come and Be Saved</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     ABOUT
+     ============================================================ -->
+<section class="section about" id="about">
+  <div class="container">
+    <div class="about-inner">
+      <div class="about-visual reveal">
+        <svg viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <!-- Cross with rays -->
+          <g opacity="0.4">
+            <line x1="100" y1="20" x2="100" y2="60"/>
+            <line x1="100" y1="140" x2="100" y2="180"/>
+            <line x1="20" y1="100" x2="60" y2="100"/>
+            <line x1="140" y1="100" x2="180" y2="100"/>
+            <line x1="44" y1="44" x2="72" y2="72"/>
+            <line x1="128" y1="128" x2="156" y2="156"/>
+            <line x1="156" y1="44" x2="128" y2="72"/>
+            <line x1="72" y1="128" x2="44" y2="156"/>
+          </g>
+          <path d="M100 60v80M70 90h60" stroke-width="2"/>
+          <circle cx="100" cy="100" r="50" stroke-dasharray="3 4" opacity="0.5"/>
+        </svg>
+        <div class="quote">
+          <span class="ref" data-en="John 14:6" data-es="Juan 14:6">John 14:6</span>
+          <p data-en="&ldquo;I am the way, the truth, and the life: no man cometh unto the Father, but by me.&rdquo;" data-es="&ldquo;Yo soy el camino, la verdad y la vida; nadie viene al Padre sino por mí.&rdquo;">&ldquo;I am the way, the truth, and the life: no man cometh unto the Father, but by me.&rdquo;</p>
+        </div>
+      </div>
+
+      <div class="about-content reveal">
+        <span class="eyebrow" data-en="Who We Are" data-es="Quiénes Somos">Who We Are</span>
+        <h2 class="section-title">
+          <span data-en="A people of" data-es="Un pueblo de">A people of</span>
+          <em data-en="the Name." data-es="el Nombre.">the Name.</em>
+        </h2>
+
+        <p class="lead" data-en="We are a conservative Apostolic congregation walking in the original gospel — preaching Jesus Christ, baptizing in His Name, and contending earnestly for the faith once delivered to the saints." data-es="Somos una congregación Apostólica conservadora que camina en el evangelio original — predicando a Jesucristo, bautizando en Su Nombre, y contendiendo ardientemente por la fe que una vez fue dada a los santos.">We are a conservative Apostolic congregation walking in the original gospel — preaching Jesus Christ, baptizing in His Name, and contending earnestly for the faith once delivered to the saints.</p>
+
+        <p data-en="IANJ is more than a service on Sunday. It is a covenant family where the Word is honored, the Spirit is welcomed, families are strengthened, and souls meet a real and saving Jesus." data-es="IANJ es mucho más que un servicio el domingo. Es una familia de pacto donde la Palabra es honrada, el Espíritu es bienvenido, las familias son fortalecidas, y las almas encuentran a un Jesús real y salvador.">IANJ is more than a service on Sunday. It is a covenant family where the Word is honored, the Spirit is welcomed, families are strengthened, and souls meet a real and saving Jesus.</p>
+
+        <div class="full-name">
+          <span class="icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v12M6 12h12"/></svg>
+          </span>
+          <div>
+            <span class="label" data-en="Our full name" data-es="Nuestro nombre completo">Our full name</span>
+            <span class="name">Iglesia Apostólica del Nombre de Jesucristo</span>
+          </div>
+        </div>
+
+        <div class="stats">
+          <div class="stat">
+            <div class="num" data-counter="3"><sup>+</sup></div>
+            <div class="label" data-en="Weekly Services" data-es="Servicios Semanales">Weekly Services</div>
+          </div>
+          <div class="stat">
+            <div class="num" data-counter="6"><sup>+</sup></div>
+            <div class="label" data-en="Active Ministries" data-es="Ministerios Activos">Active Ministries</div>
+          </div>
+          <div class="stat">
+            <div class="num" data-counter="100" suffix="%">100<sup>%</sup></div>
+            <div class="label" data-en="Welcome to Family" data-es="Bienvenida Familiar">Welcome to Family</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SERVICES
+     ============================================================ -->
+<section class="section services" id="services">
+  <div class="container">
+    <div class="section-header center reveal">
+      <span class="eyebrow" data-en="Service Times" data-es="Horario de Servicios">Service Times</span>
+      <h2 class="section-title">
+        <span data-en="Come worship" data-es="Ven a adorar">Come worship</span>
+        <em data-en="this Sunday." data-es="este Domingo.">this Sunday.</em>
+      </h2>
+      <p class="section-lead" data-en="Three services. One family. The same Jesus — preached without compromise." data-es="Tres servicios. Una familia. El mismo Jesús — predicado sin componendas.">Three services. One family. The same Jesus — preached without compromise.</p>
+    </div>
+
+    <div class="services-grid reveal-stagger">
+      <div class="service-card">
+        <div class="day" data-en="Sunday Morning" data-es="Domingo Mañana">Sunday Morning</div>
+        <div class="time">9:30<span class="period">AM</span></div>
+        <div class="meta" data-en="Bilingual · Prayer & Word" data-es="Bilingüe · Oración y Palabra">Bilingual · Prayer & Word</div>
+      </div>
+      <div class="service-card">
+        <div class="day" data-en="Sunday Main" data-es="Domingo Principal">Sunday Main</div>
+        <div class="time">11:00<span class="period">AM</span></div>
+        <div class="meta" data-en="English · Main Service" data-es="Inglés · Servicio Principal">English · Main Service</div>
+      </div>
+      <div class="service-card">
+        <div class="day" data-en="Sunday Afternoon" data-es="Domingo Tarde">Sunday Afternoon</div>
+        <div class="time">1:00<span class="period">PM</span></div>
+        <div class="meta" data-en="Español · Servicio en Español" data-es="Español · Servicio en Español">Español · Servicio en Español</div>
+      </div>
+    </div>
+
+    <div class="address-block reveal">
+      <div class="icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      </div>
+      <div class="info">
+        <div class="label" data-en="Find Us" data-es="Encuéntranos">Find Us</div>
+        <div class="value">1234 Faith Avenue · Houston, TX 77000</div>
+      </div>
+      <a href="#" class="btn-text">
+        <span data-en="Get Directions" data-es="Obtener Direcciones">Get Directions</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     MINISTRIES
+     ============================================================ -->
+<section class="section ministries" id="ministries">
+  <div class="container">
+    <div class="section-header center reveal">
+      <span class="eyebrow" data-en="Ministries" data-es="Ministerios">Ministries</span>
+      <h2 class="section-title">
+        <span data-en="A place" data-es="Un lugar">A place</span>
+        <em data-en="for every soul." data-es="para cada alma.">for every soul.</em>
+      </h2>
+      <p class="section-lead" data-en="From the youngest to the oldest, every season of life is built up in the Word and in fellowship." data-es="Desde el más pequeño hasta el más anciano, cada etapa de la vida es edificada en la Palabra y en la comunión.">From the youngest to the oldest, every season of life is built up in the Word and in fellowship.</p>
+    </div>
+
+    <div class="ministries-grid reveal-stagger">
+      <article class="ministry">
+        <div class="ministry-num">01</div>
+        <div class="icon">
+          <svg viewBox="0 0 38 38" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="19" cy="13" r="6"/><path d="M9 33v-2a8 8 0 0 1 8-8h4a8 8 0 0 1 8 8v2"/></svg>
+        </div>
+        <h3><span data-en="Men" data-es="Hombres">Men</span><em data-en="Hombres" data-es="Men">Hombres</em></h3>
+        <p data-en="Brothers building one another in prayer, accountability, and biblical manhood under God." data-es="Hermanos edificándose mutuamente en oración, rendición de cuentas y hombría bíblica bajo Dios.">Brothers building one another in prayer, accountability, and biblical manhood under God.</p>
+      </article>
+
+      <article class="ministry">
+        <div class="ministry-num">02</div>
+        <div class="icon">
+          <svg viewBox="0 0 38 38" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="19" cy="11" r="6"/><path d="M8 34c0-6 5-11 11-11s11 5 11 11"/><path d="M13 17l-2 4M25 17l2 4"/></svg>
+        </div>
+        <h3><span data-en="Women" data-es="Mujeres">Women</span><em data-en="Mujeres" data-es="Women">Mujeres</em></h3>
+        <p data-en="A sisterhood pursuing holiness, friendship, and Christ-centered purpose together." data-es="Una hermandad buscando juntas la santidad, la amistad y un propósito centrado en Cristo.">A sisterhood pursuing holiness, friendship, and Christ-centered purpose together.</p>
+      </article>
+
+      <article class="ministry">
+        <div class="ministry-num">03</div>
+        <div class="icon">
+          <svg viewBox="0 0 38 38" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 3L7 21h13l-2 14 17-20H22l-2-12z"/></svg>
+        </div>
+        <h3><span data-en="Youth" data-es="Jóvenes">Youth</span><em data-en="Jóvenes" data-es="Youth">Jóvenes</em></h3>
+        <p data-en="Middle and high schoolers chasing Jesus boldly — worship, teaching, and real friendship." data-es="Jóvenes de secundaria y preparatoria que siguen a Jesús con valentía — adoración, enseñanza y amistad genuina.">Middle and high schoolers chasing Jesus boldly — worship, teaching, and real friendship.</p>
+      </article>
+
+      <article class="ministry">
+        <div class="ministry-num">04</div>
+        <div class="icon">
+          <svg viewBox="0 0 38 38" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M27 33v-3a6 6 0 0 0-6-6H11a6 6 0 0 0-6 6v3"/><circle cx="16" cy="12" r="6"/><path d="M34 17l-4-4M30 13v8"/></svg>
+        </div>
+        <h3><span data-en="Young Adults" data-es="Jóvenes Adultos">Young Adults</span><em data-en="Jóvenes Adultos" data-es="Young Adults">Jóvenes Adultos</em></h3>
+        <p data-en="College students and twenty-somethings discovering calling, community, and conviction in Christ." data-es="Universitarios y veinteañeros descubriendo llamado, comunidad y convicción en Cristo.">College students and twenty-somethings discovering calling, community, and conviction in Christ.</p>
+      </article>
+
+      <article class="ministry">
+        <div class="ministry-num">05</div>
+        <div class="icon">
+          <svg viewBox="0 0 38 38" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M32 8a7.5 7.5 0 0 0-13.5-4 7.5 7.5 0 0 0-13.5 4c0 9 13.5 18 13.5 18S32 17 32 8z"/></svg>
+        </div>
+        <h3><span data-en="Children" data-es="Niños">Children</span><em data-en="Niños" data-es="Children">Niños</em></h3>
+        <p data-en="Safe, joyful classrooms where kids learn the Word, sing, and make lifelong friends in Christ." data-es="Salones seguros y alegres donde los niños aprenden la Palabra, cantan y hacen amistades para toda la vida en Cristo.">Safe, joyful classrooms where kids learn the Word, sing, and make lifelong friends in Christ.</p>
+      </article>
+
+      <article class="ministry">
+        <div class="ministry-num">06</div>
+        <div class="icon">
+          <svg viewBox="0 0 38 38" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="14" cy="11" r="5"/><circle cx="26" cy="11" r="5"/><path d="M4 32c0-5 4-9 10-9s10 4 10 9M16 32c0-5 4-9 10-9s10 4 10 9"/></svg>
+        </div>
+        <h3><span data-en="Couples" data-es="Matrimonios">Couples</span><em data-en="Matrimonios" data-es="Couples">Matrimonios</em></h3>
+        <p data-en="Married couples investing in their covenant through teaching, mentoring, and shared faith." data-es="Parejas casadas invirtiendo en su pacto a través de enseñanza, mentoría y fe compartida.">Married couples investing in their covenant through teaching, mentoring, and shared faith.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     VISIT
+     ============================================================ -->
+<section class="section visit" id="visit">
+  <div class="container-narrow">
+    <div class="visit-card reveal">
+      <div class="visit-grid">
+        <div class="visit-intro">
+          <span class="eyebrow" data-en="Plan Your Visit" data-es="Planea tu Visita">Plan Your Visit</span>
+          <h2>
+            <span data-en="Your life can" data-es="Tu vida puede">Your life can</span>
+            <em data-en="change this Sunday." data-es="cambiar este domingo.">change this Sunday.</em>
+          </h2>
+          <div class="sub" data-en="Come as you are. Leave forever different." data-es="Ven tal como eres. Vete eternamente diferente.">Come as you are. Leave forever different.</div>
+          <p data-en="Tell us you're coming and we'll have someone ready to greet you, walk you to the kids' classes, and help you find a seat. No pressure. Just love." data-es="Cuéntanos que vienes y tendremos a alguien listo para recibirte, acompañarte a las clases de los niños y ayudarte a encontrar tu asiento. Sin presión. Sólo amor.">Tell us you're coming and we'll have someone ready to greet you, walk you to the kids' classes, and help you find a seat. No pressure. Just love.</p>
+
+          <ul class="promise-list">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              <span data-en="A real welcome at the door" data-es="Una bienvenida genuina en la puerta">A real welcome at the door</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              <span data-en="Safe, joyful classes for kids" data-es="Clases seguras y alegres para niños">Safe, joyful classes for kids</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              <span data-en="Translation in both languages" data-es="Traducción en ambos idiomas">Translation in both languages</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              <span data-en="Prayer for whatever you carry" data-es="Oración por lo que sea que llevas">Prayer for whatever you carry</span>
+            </li>
+          </ul>
+        </div>
+
+        <form class="form" id="visitForm" novalidate>
+          <div class="form-row">
+            <div class="field">
+              <label for="name" data-en="Name" data-es="Nombre">Name</label>
+              <input id="name" name="name" type="text" required data-placeholder-en="Your full name" data-placeholder-es="Tu nombre completo" placeholder="Your full name" />
+            </div>
+            <div class="field">
+              <label for="phone" data-en="Phone" data-es="Teléfono">Phone</label>
+              <input id="phone" name="phone" type="tel" required data-placeholder-en="(555) 123-4567" data-placeholder-es="(555) 123-4567" placeholder="(555) 123-4567" />
+            </div>
+          </div>
+          <div class="field">
+            <label for="email" data-en="Email" data-es="Correo">Email</label>
+            <input id="email" name="email" type="email" required data-placeholder-en="you@example.com" data-placeholder-es="tu@ejemplo.com" placeholder="you@example.com" />
+          </div>
+          <div class="field">
+            <label for="sunday" data-en="I will attend" data-es="Asistiré">I will attend</label>
+            <select id="sunday" name="sunday" required>
+              <option value="" disabled selected data-en="Choose a Sunday service" data-es="Elige un servicio dominical">Choose a Sunday service</option>
+              <option value="9:30" data-en="Sunday · 9:30 AM (Bilingual)" data-es="Domingo · 9:30 AM (Bilingüe)">Sunday · 9:30 AM (Bilingual)</option>
+              <option value="11:00" data-en="Sunday · 11:00 AM (English)" data-es="Domingo · 11:00 AM (Inglés)">Sunday · 11:00 AM (English)</option>
+              <option value="13:00" data-en="Sunday · 1:00 PM (Español)" data-es="Domingo · 1:00 PM (Español)">Sunday · 1:00 PM (Español)</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary form-submit" data-magnetic>
+            <span data-en="Save My Seat" data-es="Guarda Mi Asiento">Save My Seat</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-verse reveal">
+      <div class="ref" data-en="Acts 4:12" data-es="Hechos 4:12">Acts 4:12</div>
+      <blockquote>
+        <span data-en="&ldquo;Neither is there salvation in any other: for there is" data-es="&ldquo;Y en ningún otro hay salvación, porque no hay">&ldquo;Neither is there salvation in any other: for there is</span>
+        <em data-en="none other Name" data-es="otro Nombre">none other Name</em>
+        <span data-en="under heaven given among men, whereby we must be saved.&rdquo;" data-es="bajo el cielo, dado a los hombres, en que podamos ser salvos.&rdquo;">under heaven given among men, whereby we must be saved.&rdquo;</span>
+      </blockquote>
+    </div>
+
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#top" class="logo">
+          <span class="logo-mark" aria-hidden="true">
+            <svg viewBox="0 0 44 44" fill="none">
+              <circle cx="22" cy="22" r="21" stroke="url(#logoGrad2)" stroke-width="1"/>
+              <path d="M22 8v28M14 18h16" stroke="url(#logoGrad2)" stroke-width="1.5" stroke-linecap="round"/>
+              <defs>
+                <linearGradient id="logoGrad2" x1="0" y1="0" x2="44" y2="44">
+                  <stop offset="0%" stop-color="#fff4cc"/>
+                  <stop offset="100%" stop-color="#d4af37"/>
+                </linearGradient>
+              </defs>
+            </svg>
+          </span>
+          <span class="logo-text">
+            IANJ
+            <span class="sub" data-en="Apostolic Church" data-es="Iglesia Apostólica">Apostolic Church</span>
+          </span>
+        </a>
+        <p data-en="Iglesia Apostólica del Nombre de Jesucristo — preaching Jesus alone, baptizing in His Name, and walking in the Spirit of the Apostles." data-es="Iglesia Apostólica del Nombre de Jesucristo — predicando sólo a Jesús, bautizando en Su Nombre, y caminando en el Espíritu de los Apóstoles.">Iglesia Apostólica del Nombre de Jesucristo — preaching Jesus alone, baptizing in His Name, and walking in the Spirit of the Apostles.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4 data-en="Explore" data-es="Explora">Explore</h4>
+        <ul>
+          <li><a href="#message" data-en="The Message" data-es="El Mensaje">The Message</a></li>
+          <li><a href="#salvation" data-en="Plan of Salvation" data-es="Plan de Salvación">Plan of Salvation</a></li>
+          <li><a href="#about" data-en="About IANJ" data-es="Sobre IANJ">About IANJ</a></li>
+          <li><a href="#ministries" data-en="Ministries" data-es="Ministerios">Ministries</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 data-en="Connect" data-es="Conecta">Connect</h4>
+        <ul>
+          <li><a href="#" data-en="Watch Live" data-es="Ver en Vivo">Watch Live</a></li>
+          <li><a href="#" data-en="Prayer Requests" data-es="Peticiones de Oración">Prayer Requests</a></li>
+          <li><a href="#" data-en="Give Online" data-es="Dar en Línea">Give Online</a></li>
+          <li><a href="#visit" data-en="Plan a Visit" data-es="Planea una Visita">Plan a Visit</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 data-en="Find Us" data-es="Encuéntranos">Find Us</h4>
+        <ul>
+          <li class="item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>1234 Faith Avenue<br/>Houston, TX 77000</span>
+          </li>
+          <li class="item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <span>(555) 123-4567</span>
+          </li>
+          <li class="item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <span>hello@ianj.church</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p data-en="© 2026 IANJ · Iglesia Apostólica del Nombre de Jesucristo · All rights reserved." data-es="© 2026 IANJ · Iglesia Apostólica del Nombre de Jesucristo · Todos los derechos reservados.">© 2026 IANJ · Iglesia Apostólica del Nombre de Jesucristo · All rights reserved.</p>
+      <div class="socials" aria-label="Social media">
+        <a href="#" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.51 1.49-3.89 3.77-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.77l-.44 2.89h-2.33v6.99A10 10 0 0 0 22 12z"/></svg>
+        </a>
+        <a href="#" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+        <a href="#" aria-label="YouTube">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31.3 31.3 0 0 0 0 12a31.3 31.3 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.3 31.3 0 0 0 24 12a31.3 31.3 0 0 0-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg>
+        </a>
+        <a href="#" aria-label="Spotify">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm4.59 14.42a.63.63 0 0 1-.86.21c-2.35-1.44-5.31-1.76-8.79-.97a.62.62 0 1 1-.28-1.21c3.81-.87 7.09-.49 9.72 1.12a.62.62 0 0 1 .21.85zm1.22-2.73a.78.78 0 0 1-1.07.26c-2.69-1.66-6.79-2.13-9.97-1.18a.78.78 0 0 1-.45-1.49c3.63-1.1 8.15-.55 11.24 1.34a.78.78 0 0 1 .25 1.07zm.11-2.84c-3.22-1.91-8.55-2.09-11.63-1.16a.94.94 0 0 1-.54-1.79c3.54-1.07 9.41-.86 13.13 1.34a.94.94 0 1 1-.96 1.61z"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  /* ============================================================
+     LANGUAGE TOGGLE
+     ============================================================ */
+  const SUPPORTED = ['en', 'es'];
+  const STORAGE_KEY = 'ianj-lang';
+
+  function getInitialLang() {
+    const saved = localStorage.getItem(STORAGE_KEY);
+    if (SUPPORTED.includes(saved)) return saved;
+    const browser = (navigator.language || 'en').toLowerCase().slice(0, 2);
+    return SUPPORTED.includes(browser) ? browser : 'en';
+  }
+
+  function applyLang(lang) {
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-en][data-es]').forEach(el => {
+      const v = el.getAttribute('data-' + lang);
+      if (v != null) el.textContent = v;
+    });
+    document.querySelectorAll('[data-placeholder-en][data-placeholder-es]').forEach(el => {
+      const v = el.getAttribute('data-placeholder-' + lang);
+      if (v != null) el.setAttribute('placeholder', v);
+    });
+    document.querySelectorAll('.lang-toggle button').forEach(b => {
+      b.classList.toggle('active', b.dataset.lang === lang);
+    });
+    localStorage.setItem(STORAGE_KEY, lang);
+  }
+
+  document.querySelectorAll('.lang-toggle button').forEach(btn => {
+    btn.addEventListener('click', () => applyLang(btn.dataset.lang));
+  });
+  applyLang(getInitialLang());
+
+  /* ============================================================
+     NAVBAR SCROLL STATE + PROGRESS BAR
+     ============================================================ */
+  const navbar = document.getElementById('navbar');
+  const progressBar = document.getElementById('progressBar');
+
+  function onScroll() {
+    navbar.classList.toggle('scrolled', window.scrollY > 60);
+    const total = document.documentElement.scrollHeight - window.innerHeight;
+    const pct = total > 0 ? (window.scrollY / total) * 100 : 0;
+    progressBar.style.width = pct + '%';
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  /* ============================================================
+     MOBILE MENU
+     ============================================================ */
+  const menuBtn = document.getElementById('menuBtn');
+  const navLinks = document.getElementById('navLinks');
+  menuBtn.addEventListener('click', () => {
+    const open = navLinks.classList.toggle('open');
+    menuBtn.setAttribute('aria-expanded', String(open));
+  });
+  navLinks.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      menuBtn.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  /* ============================================================
+     REVEAL ON SCROLL
+     ============================================================ */
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+    document.querySelectorAll('.reveal, .reveal-stagger').forEach(el => io.observe(el));
+  } else {
+    document.querySelectorAll('.reveal, .reveal-stagger').forEach(el => el.classList.add('visible'));
+  }
+
+  /* ============================================================
+     CUSTOM CURSOR (desktop only, fine pointer)
+     ============================================================ */
+  const fine = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  if (fine) {
+    const dot = document.getElementById('cursorDot');
+    const ring = document.getElementById('cursorRing');
+    let mx = window.innerWidth / 2, my = window.innerHeight / 2;
+    let rx = mx, ry = my;
+
+    window.addEventListener('mousemove', (e) => {
+      mx = e.clientX; my = e.clientY;
+      dot.style.transform = `translate(${mx}px, ${my}px) translate(-50%,-50%)`;
+    });
+
+    function lerp() {
+      rx += (mx - rx) * 0.18;
+      ry += (my - ry) * 0.18;
+      ring.style.transform = `translate(${rx}px, ${ry}px) translate(-50%,-50%)`;
+      requestAnimationFrame(lerp);
+    }
+    lerp();
+
+    const hoverTargets = 'a, button, .btn, .pillar, .ministry, .service-card, input, select';
+    document.querySelectorAll(hoverTargets).forEach(el => {
+      el.addEventListener('mouseenter', () => ring.classList.add('hover'));
+      el.addEventListener('mouseleave', () => ring.classList.remove('hover'));
+    });
+  } else {
+    document.getElementById('cursorDot').style.display = 'none';
+    document.getElementById('cursorRing').style.display = 'none';
+  }
+
+  /* ============================================================
+     MAGNETIC BUTTONS
+     ============================================================ */
+  if (fine && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.querySelectorAll('[data-magnetic]').forEach(btn => {
+      const strength = 0.25;
+      btn.addEventListener('mousemove', (e) => {
+        const r = btn.getBoundingClientRect();
+        const x = (e.clientX - r.left - r.width / 2) * strength;
+        const y = (e.clientY - r.top - r.height / 2) * strength;
+        btn.style.transform = `translate(${x}px, ${y}px)`;
+      });
+      btn.addEventListener('mouseleave', () => {
+        btn.style.transform = '';
+      });
+    });
+  }
+
+  /* ============================================================
+     HERO PARTICLE FIELD — drifting stars
+     ============================================================ */
+  (function particleField() {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const canvas = document.getElementById('heroCanvas');
+    const ctx = canvas.getContext('2d');
+    let w, h, particles;
+    const COUNT = 80;
+
+    function size() {
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      w = canvas.width = canvas.offsetWidth * dpr;
+      h = canvas.height = canvas.offsetHeight * dpr;
+      canvas.style.width = canvas.offsetWidth + 'px';
+      canvas.style.height = canvas.offsetHeight + 'px';
+      ctx.scale(dpr, dpr);
+      w = canvas.offsetWidth; h = canvas.offsetHeight;
+    }
+
+    function makeParticles() {
+      particles = [];
+      for (let i = 0; i < COUNT; i++) {
+        particles.push({
+          x: Math.random() * w,
+          y: Math.random() * h,
+          r: Math.random() * 1.4 + 0.3,
+          vx: (Math.random() - 0.5) * 0.12,
+          vy: -Math.random() * 0.18 - 0.04,
+          a: Math.random() * 0.6 + 0.2,
+          ph: Math.random() * Math.PI * 2
+        });
+      }
+    }
+
+    function frame(t) {
+      ctx.clearRect(0, 0, w, h);
+      particles.forEach(p => {
+        p.x += p.vx;
+        p.y += p.vy;
+        p.ph += 0.02;
+        if (p.x < 0) p.x = w; else if (p.x > w) p.x = 0;
+        if (p.y < -10) { p.y = h + 5; p.x = Math.random() * w; }
+
+        const alpha = p.a * (0.6 + Math.sin(p.ph) * 0.4);
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(244, 213, 124, ${alpha})`;
+        ctx.fill();
+
+        // Soft glow
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r * 4, 0, Math.PI * 2);
+        const grad = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.r * 4);
+        grad.addColorStop(0, `rgba(244, 213, 124, ${alpha * 0.25})`);
+        grad.addColorStop(1, 'rgba(244, 213, 124, 0)');
+        ctx.fillStyle = grad;
+        ctx.fill();
+      });
+      requestAnimationFrame(frame);
+    }
+
+    size();
+    makeParticles();
+    window.addEventListener('resize', () => { size(); makeParticles(); });
+    requestAnimationFrame(frame);
+  })();
+
+  /* ============================================================
+     COUNTER ANIMATIONS
+     ============================================================ */
+  const counterObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const el = entry.target;
+      const target = parseInt(el.dataset.counter, 10);
+      const sup = el.querySelector('sup')?.outerHTML || '';
+      const duration = 1600;
+      const start = performance.now();
+      function tick(now) {
+        const t = Math.min(1, (now - start) / duration);
+        const eased = 1 - Math.pow(1 - t, 3);
+        const value = Math.floor(eased * target);
+        el.innerHTML = value + sup;
+        if (t < 1) requestAnimationFrame(tick);
+        else el.innerHTML = target + sup;
+      }
+      requestAnimationFrame(tick);
+      counterObserver.unobserve(el);
+    });
+  }, { threshold: 0.5 });
+  document.querySelectorAll('[data-counter]').forEach(el => counterObserver.observe(el));
+
+  /* ============================================================
+     FORM SUBMIT — placeholder confirmation
+     ============================================================ */
+  const form = document.getElementById('visitForm');
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const lang = document.documentElement.lang === 'es' ? 'es' : 'en';
+    const submitSpan = form.querySelector('button[type="submit"] span');
+    const original = submitSpan.textContent;
+    submitSpan.textContent = lang === 'es'
+      ? '¡Listo! Te veremos pronto ✦'
+      : 'Done! See you Sunday ✦';
+    setTimeout(() => {
+      form.reset();
+      submitSpan.textContent = original;
+    }, 3400);
+  });
+
+  /* ============================================================
+     PARALLAX HERO BEAM (subtle)
+     ============================================================ */
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const beam = document.querySelector('.hero-beam');
+    if (beam) {
+      window.addEventListener('scroll', () => {
+        const y = window.scrollY;
+        if (y < window.innerHeight) {
+          beam.style.transform = `translateX(-50%) translateY(${y * 0.3}px)`;
+          beam.style.opacity = 1 - (y / window.innerHeight) * 0.8;
+        }
+      }, { passive: true });
+    }
+  }
+</script>
+</body>
+</html>
