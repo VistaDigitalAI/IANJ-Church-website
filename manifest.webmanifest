@@ -1,0 +1,51 @@
+{
+  "name": "IANJ — Iglesia Apostólica del Nombre de Jesucristo",
+  "short_name": "IANJ Church",
+  "description": "Bilingual Apostolic Pentecostal church in Houston preaching salvation through Jesus Christ alone. Acts 2:38.",
+  "start_url": "/IANJ-Church-website/",
+  "scope": "/IANJ-Church-website/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#050810",
+  "theme_color": "#0a1226",
+  "lang": "en-US",
+  "dir": "ltr",
+  "categories": ["religion", "lifestyle", "education", "community"],
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "og-image.svg",
+      "sizes": "1200x630",
+      "type": "image/svg+xml",
+      "form_factor": "wide",
+      "label": "IANJ home page — There is salvation in no other Name"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Plan a Visit",
+      "short_name": "Visit",
+      "description": "Plan your visit to IANJ this Sunday",
+      "url": "/IANJ-Church-website/#visit"
+    },
+    {
+      "name": "Service Times",
+      "short_name": "Services",
+      "description": "Sunday service times",
+      "url": "/IANJ-Church-website/#services"
+    },
+    {
+      "name": "Plan of Salvation",
+      "short_name": "Salvation",
+      "description": "How to be saved — Acts 2:38",
+      "url": "/IANJ-Church-website/#salvation"
+    }
+  ]
+}
