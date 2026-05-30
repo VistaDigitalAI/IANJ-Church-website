@@ -74,4 +74,88 @@
     <priority>0.9</priority>
   </url>
 
+  <!-- ============================================================== -->
+  <!-- BLOG — Truth section                                           -->
+  <!-- ============================================================== -->
+  <url>
+    <loc>https://vistadigitalai.github.io/IANJ-Church-website/blog/</loc>
+    <lastmod>2026-05-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vistadigitalai.github.io/IANJ-Church-website/blog/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://vistadigitalai.github.io/IANJ-Church-website/blog/?lang=es" />
+  </url>
+
+  <url>
+    <loc>https://vistadigitalai.github.io/IANJ-Church-website/blog/acts-2-38/</loc>
+    <lastmod>2026-05-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vistadigitalai.github.io/IANJ-Church-website/blog/acts-2-38/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://vistadigitalai.github.io/IANJ-Church-website/blog/acts-2-38/?lang=es" />
+  </url>
+
+  <url>
+    <loc>https://vistadigitalai.github.io/IANJ-Church-website/blog/baptized-in-jesus-name/</loc>
+    <lastmod>2026-05-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vistadigitalai.github.io/IANJ-Church-website/blog/baptized-in-jesus-name/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://vistadigitalai.github.io/IANJ-Church-website/blog/baptized-in-jesus-name/?lang=es" />
+  </url>
+
+  <url>
+    <loc>https://vistadigitalai.github.io/IANJ-Church-website/blog/is-the-trinity-biblical/</loc>
+    <lastmod>2026-05-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vistadigitalai.github.io/IANJ-Church-website/blog/is-the-trinity-biblical/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://vistadigitalai.github.io/IANJ-Church-website/blog/is-the-trinity-biblical/?lang=es" />
+  </url>
+
+  <url>
+    <loc>https://vistadigitalai.github.io/IANJ-Church-website/blog/born-again/</loc>
+    <lastmod>2026-05-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vistadigitalai.github.io/IANJ-Church-website/blog/born-again/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://vistadigitalai.github.io/IANJ-Church-website/blog/born-again/?lang=es" />
+  </url>
+
+  <url>
+    <loc>https://vistadigitalai.github.io/IANJ-Church-website/blog/holy-spirit-and-tongues/</loc>
+    <lastmod>2026-05-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vistadigitalai.github.io/IANJ-Church-website/blog/holy-spirit-and-tongues/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://vistadigitalai.github.io/IANJ-Church-website/blog/holy-spirit-and-tongues/?lang=es" />
+  </url>
+
+  <url>
+    <loc>https://vistadigitalai.github.io/IANJ-Church-website/blog/what-is-repentance/</loc>
+    <lastmod>2026-05-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vistadigitalai.github.io/IANJ-Church-website/blog/what-is-repentance/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://vistadigitalai.github.io/IANJ-Church-website/blog/what-is-repentance/?lang=es" />
+  </url>
+
+  <url>
+    <loc>https://vistadigitalai.github.io/IANJ-Church-website/blog/how-do-i-know-im-saved/</loc>
+    <lastmod>2026-05-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vistadigitalai.github.io/IANJ-Church-website/blog/how-do-i-know-im-saved/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://vistadigitalai.github.io/IANJ-Church-website/blog/how-do-i-know-im-saved/?lang=es" />
+  </url>
+
+  <url>
+    <loc>https://vistadigitalai.github.io/IANJ-Church-website/blog/who-is-jesus-christ/</loc>
+    <lastmod>2026-05-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vistadigitalai.github.io/IANJ-Church-website/blog/who-is-jesus-christ/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://vistadigitalai.github.io/IANJ-Church-website/blog/who-is-jesus-christ/?lang=es" />
+  </url>
+
 </urlset>
