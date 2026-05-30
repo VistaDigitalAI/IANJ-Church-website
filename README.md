@@ -1,6 +1,6 @@
 # IANJ — Iglesia Apostólica del Nombre de Jesucristo
 
-The official website of **IANJ Apostolic Church**, a bilingual (English / Spanish) conservative Apostolic Pentecostal congregation in Houston, Texas.
+The official website of **IANJ Apostolic Church**, a bilingual (English / Spanish) conservative Apostolic Pentecostal congregation in Tulsa, Oklahoma.
 
 🔗 **Live at:** https://vistadigitalai.github.io/IANJ-Church-website/
 
