@@ -1302,8 +1302,28 @@
   }
   .services-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
     gap: 1.25rem;
+  }
+  .service-card-prayer {
+    position: relative;
+    background: linear-gradient(180deg, var(--abyss) 0%, var(--midnight) 100%) !important;
+    border-color: var(--line-gold) !important;
+  }
+  .service-card-prayer::after {
+    content: '✦';
+    position: absolute;
+    top: 0.85rem;
+    right: 1rem;
+    color: var(--gold-2);
+    font-size: 0.85rem;
+    opacity: 0.7;
+  }
+  .service-card-prayer .day {
+    color: var(--gold-2) !important;
+  }
+  .service-card-prayer .meta {
+    color: rgba(244, 213, 124, 0.65) !important;
   }
   .service-card {
     position: relative;
@@ -1400,6 +1420,134 @@
     font-weight: 400;
   }
   .address-block .btn-text { flex-shrink: 0; }
+
+  /* ============================================================
+     PRAYER SECTION — dawn warmth, scripture-driven
+     ============================================================ */
+  .prayer-section {
+    background:
+      radial-gradient(ellipse 80% 60% at 50% 0%, rgba(212, 175, 55, 0.10) 0%, transparent 60%),
+      linear-gradient(180deg, var(--abyss) 0%, var(--void) 100%);
+    position: relative;
+    overflow: hidden;
+  }
+  .prayer-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold-3), transparent);
+    opacity: 0.4;
+  }
+  .prayer-glow {
+    position: absolute;
+    top: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(244, 213, 124, 0.08) 0%, transparent 60%);
+    pointer-events: none;
+    filter: blur(40px);
+    animation: dawn-pulse 8s var(--ease-in-out) infinite;
+  }
+  @keyframes dawn-pulse {
+    0%, 100% { opacity: 0.6; transform: translateX(-50%) scale(0.95); }
+    50% { opacity: 1; transform: translateX(-50%) scale(1.05); }
+  }
+  .prayer-section .eyebrow { color: var(--gold-2); }
+  .prayer-section .eyebrow::before, .prayer-section .eyebrow::after { background: var(--gold-3); }
+  .prayer-section .section-title { color: var(--white); }
+  .prayer-section .section-lead { color: rgba(255, 255, 255, 0.7); }
+
+  .prayer-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.75rem;
+    margin-top: 1rem;
+  }
+  .prayer-pillar {
+    text-align: center;
+    padding: 2rem 1.5rem;
+    position: relative;
+  }
+  .prayer-pillar .icon {
+    color: var(--gold-2);
+    margin: 0 auto 1.5rem;
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.12) 0%, transparent 70%);
+    border: 1px solid var(--line-gold);
+    border-radius: 50%;
+  }
+  .prayer-pillar .icon svg { width: 28px; height: 28px; }
+  .prayer-pillar h3 {
+    font-family: var(--font-display);
+    font-size: 1.45rem;
+    font-weight: 400;
+    color: var(--white);
+    margin-bottom: 0.85rem;
+    font-style: italic;
+    line-height: 1.2;
+  }
+  .prayer-pillar p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    max-width: 360px;
+    margin: 0 auto;
+  }
+
+  .prayer-invitation {
+    margin-top: 4rem;
+    padding: 2.75rem 2.5rem;
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.08) 0%, rgba(28, 45, 82, 0.4) 100%);
+    border: 1px solid var(--line-gold);
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+  }
+  .prayer-invitation::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold-2), transparent);
+  }
+  .prayer-invitation-inner {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 2.5rem;
+    align-items: center;
+  }
+  .prayer-invitation .eyebrow { margin-bottom: 0.5rem; }
+  .prayer-invitation h3 {
+    font-family: var(--font-display);
+    font-size: clamp(1.5rem, 1.2rem + 1vw, 2rem);
+    font-weight: 400;
+    color: var(--gold-1);
+    margin-bottom: 0.6rem;
+    line-height: 1.1;
+  }
+  .prayer-invitation p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.95rem;
+    line-height: 1.55;
+    margin: 0;
+    max-width: 480px;
+  }
+  @media (max-width: 900px) {
+    .prayer-grid { grid-template-columns: 1fr; gap: 1rem; }
+    .prayer-pillar { padding: 1.5rem 1rem; }
+    .prayer-invitation-inner { grid-template-columns: 1fr; gap: 1.5rem; text-align: center; }
+    .prayer-invitation p { margin: 0 auto; }
+  }
 
   /* ============================================================
      SECTION — Ministries
@@ -1875,17 +2023,10 @@
   "openingHoursSpecification": [
     {
       "@type": "OpeningHoursSpecification",
-      "dayOfWeek": "Tuesday",
-      "opens": "19:00",
-      "closes": "20:30",
-      "name": "Tuesday Bible Study"
-    },
-    {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": "Thursday",
-      "opens": "19:00",
-      "closes": "20:30",
-      "name": "Thursday Prayer Service"
+      "dayOfWeek": "Sunday",
+      "opens": "06:00",
+      "closes": "07:30",
+      "name": "Sunday Morning Prayer"
     },
     {
       "@type": "OpeningHoursSpecification",
@@ -1893,9 +2034,30 @@
       "opens": "11:00",
       "closes": "12:30",
       "name": "Sunday Main Worship"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Tuesday",
+      "opens": "19:00",
+      "closes": "20:30",
+      "name": "Tuesday Midweek Service"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Thursday",
+      "opens": "19:00",
+      "closes": "20:30",
+      "name": "Thursday Midweek Service"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Saturday",
+      "opens": "06:00",
+      "closes": "07:30",
+      "name": "Saturday Morning Prayer"
     }
   ],
-  "openingHours": ["Tu 19:00-20:30", "Th 19:00-20:30", "Su 11:00-12:30"],
+  "openingHours": ["Su 06:00-07:30", "Su 11:00-12:30", "Tu 19:00-20:30", "Th 19:00-20:30", "Sa 06:00-07:30"],
   "knowsLanguage": [
     { "@type": "Language", "name": "English", "alternateName": "en" },
     { "@type": "Language", "name": "Spanish", "alternateName": "es" }
@@ -2008,7 +2170,7 @@
       "name": "What are IANJ Sunday service times?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "IANJ holds three weekly gatherings at 7506 E 11th St, Tulsa, OK: Sunday Main Worship at 11:00 AM (bilingual English/Spanish), Tuesday Bible Study at 7:00 PM, and Thursday Prayer Service at 7:00 PM. Visitors are welcomed at every service. No appointment needed — come as you are."
+        "text": "IANJ holds five weekly gatherings at 7506 E 11th St, Tulsa, OK: Sunday Morning Prayer at 6:00 AM, Sunday Main Worship at 11:00 AM (bilingual English/Spanish), Tuesday Midweek Service at 7:00 PM, Thursday Midweek Service at 7:00 PM, and Saturday Morning Prayer at 6:00 AM. All gatherings are bilingual. Visitors are welcomed at every service. No appointment needed — come as you are."
       }
     },
     {
@@ -2076,8 +2238,8 @@
 {
   "@context": "https://schema.org",
   "@type": "Event",
-  "name": "Tuesday Bible Study · Estudio Bíblico",
-  "description": "Weekly midweek Bible study at IANJ — bilingual exposition of the Scriptures, group discussion, and prayer. Estudio Bíblico semanal de mitad de semana.",
+  "name": "Tuesday Midweek Service · Servicio del Martes",
+  "description": "Weekly midweek service at IANJ — bilingual preaching of the Word, worship, and the moving of the Holy Spirit. Servicio bilingüe de mitad de semana.",
   "eventSchedule": {
     "@type": "Schedule",
     "repeatFrequency": "P1W",
@@ -2110,14 +2272,82 @@
 {
   "@context": "https://schema.org",
   "@type": "Event",
-  "name": "Thursday Prayer Service · Servicio de Oración",
-  "description": "Weekly Thursday prayer service at IANJ Apostolic Church — corporate intercession, worship, and seeking the moving of the Holy Spirit. Servicio de Oración semanal.",
+  "name": "Thursday Midweek Service · Servicio del Jueves",
+  "description": "Weekly Thursday service at IANJ — bilingual preaching, worship, and ministry of the Word. Servicio bilingüe de mitad de semana.",
   "eventSchedule": {
     "@type": "Schedule",
     "repeatFrequency": "P1W",
     "byDay": "https://schema.org/Thursday",
     "startTime": "19:00",
     "endTime": "20:30",
+    "scheduleTimezone": "America/Chicago"
+  },
+  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+  "eventStatus": "https://schema.org/EventScheduled",
+  "location": {
+    "@type": "Place",
+    "name": "IANJ — Iglesia Apostólica del Nombre de Jesucristo",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "7506 E 11th St",
+      "addressLocality": "Tulsa",
+      "addressRegion": "OK",
+      "postalCode": "74112",
+      "addressCountry": "US"
+    }
+  },
+  "organizer": { "@id": "https://vistadigitalai.github.io/IANJ-Church-website/#church" },
+  "isAccessibleForFree": true,
+  "inLanguage": ["en-US", "es-US"]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Event",
+  "name": "Sunday Morning Prayer · Oración Matutina del Domingo",
+  "description": "Weekly bilingual corporate prayer at IANJ before the main Sunday worship — gathering at dawn to seek the face of God in the apostolic pattern of Acts 1:14.",
+  "eventSchedule": {
+    "@type": "Schedule",
+    "repeatFrequency": "P1W",
+    "byDay": "https://schema.org/Sunday",
+    "startTime": "06:00",
+    "endTime": "07:30",
+    "scheduleTimezone": "America/Chicago"
+  },
+  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+  "eventStatus": "https://schema.org/EventScheduled",
+  "location": {
+    "@type": "Place",
+    "name": "IANJ — Iglesia Apostólica del Nombre de Jesucristo",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "7506 E 11th St",
+      "addressLocality": "Tulsa",
+      "addressRegion": "OK",
+      "postalCode": "74112",
+      "addressCountry": "US"
+    }
+  },
+  "organizer": { "@id": "https://vistadigitalai.github.io/IANJ-Church-website/#church" },
+  "isAccessibleForFree": true,
+  "inLanguage": ["en-US", "es-US"]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Event",
+  "name": "Saturday Morning Prayer · Oración Matutina del Sábado",
+  "description": "Weekly bilingual corporate dawn prayer at IANJ — hungry hearts gathering before the city wakes to seek the moving of the Holy Spirit. Acts 1:14 lived weekly.",
+  "eventSchedule": {
+    "@type": "Schedule",
+    "repeatFrequency": "P1W",
+    "byDay": "https://schema.org/Saturday",
+    "startTime": "06:00",
+    "endTime": "07:30",
     "scheduleTimezone": "America/Chicago"
   },
   "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
@@ -2178,6 +2408,7 @@
         <li><a href="#salvation" data-en="Salvation" data-es="Salvación">Salvation</a></li>
         <li><a href="#about" data-en="About" data-es="Nosotros">About</a></li>
         <li><a href="#services" data-en="Services" data-es="Servicios">Services</a></li>
+        <li><a href="#prayer" data-en="Prayer" data-es="Oración">Prayer</a></li>
         <li><a href="#ministries" data-en="Ministries" data-es="Ministerios">Ministries</a></li>
         <li><a href="blog/" data-en="Truth" data-es="Verdad">Truth</a></li>
         <li><a href="#visit" data-en="Visit" data-es="Visítanos">Visit</a></li>
@@ -2497,10 +2728,15 @@
         <span data-en="Come worship" data-es="Ven a adorar">Come worship</span>
         <em data-en="with us." data-es="con nosotros.">with us.</em>
       </h2>
-      <p class="section-lead" data-en="Three weekly gatherings. One family. The same Jesus — preached without compromise." data-es="Tres reuniones semanales. Una familia. El mismo Jesús — predicado sin componendas.">Three weekly gatherings. One family. The same Jesus — preached without compromise.</p>
+      <p class="section-lead" data-en="Five weekly gatherings — including dawn prayer Saturdays and Sundays. The same Jesus, preached without compromise." data-es="Cinco reuniones semanales — incluyendo oración al amanecer los sábados y domingos. El mismo Jesús, predicado sin componendas.">Five weekly gatherings — including dawn prayer Saturdays and Sundays. The same Jesus, preached without compromise.</p>
     </div>
 
     <div class="services-grid reveal-stagger">
+      <div class="service-card service-card-prayer">
+        <div class="day" data-en="Sunday Prayer" data-es="Oración Dominical">Sunday Prayer</div>
+        <div class="time">6:00<span class="period">AM</span></div>
+        <div class="meta" data-en="Morning Prayer · Bilingual" data-es="Oración Matutina · Bilingüe">Morning Prayer · Bilingual</div>
+      </div>
       <div class="service-card">
         <div class="day" data-en="Sunday Worship" data-es="Servicio Dominical">Sunday Worship</div>
         <div class="time">11:00<span class="period">AM</span></div>
@@ -2509,12 +2745,17 @@
       <div class="service-card">
         <div class="day" data-en="Tuesday" data-es="Martes">Tuesday</div>
         <div class="time">7:00<span class="period">PM</span></div>
-        <div class="meta" data-en="Bible Study · Estudio Bíblico" data-es="Estudio Bíblico · Bible Study">Bible Study · Estudio Bíblico</div>
+        <div class="meta" data-en="Midweek Service · Servicio" data-es="Servicio · Midweek Service">Midweek Service · Servicio</div>
       </div>
       <div class="service-card">
         <div class="day" data-en="Thursday" data-es="Jueves">Thursday</div>
         <div class="time">7:00<span class="period">PM</span></div>
-        <div class="meta" data-en="Prayer Service · Servicio de Oración" data-es="Servicio de Oración · Prayer Service">Prayer Service · Servicio de Oración</div>
+        <div class="meta" data-en="Midweek Service · Servicio" data-es="Servicio · Midweek Service">Midweek Service · Servicio</div>
+      </div>
+      <div class="service-card service-card-prayer">
+        <div class="day" data-en="Saturday Prayer" data-es="Oración Sabatina">Saturday Prayer</div>
+        <div class="time">6:00<span class="period">AM</span></div>
+        <div class="meta" data-en="Morning Prayer · Bilingual" data-es="Oración Matutina · Bilingüe">Morning Prayer · Bilingual</div>
       </div>
     </div>
 
@@ -2530,6 +2771,64 @@
         <span data-en="Get Directions" data-es="Obtener Direcciones">Get Directions</span>
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
       </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     THE POWER OF PRAYER
+     ============================================================ -->
+<section class="section prayer-section" id="prayer">
+  <div class="prayer-glow" aria-hidden="true"></div>
+  <div class="container">
+    <div class="section-header center reveal">
+      <span class="eyebrow" data-en="Heart of the Church" data-es="Corazón de la Iglesia">Heart of the Church</span>
+      <h2 class="section-title">
+        <span data-en="The Power of " data-es="El Poder de la ">The Power of </span><em data-en="Prayer." data-es="Oración.">Prayer.</em>
+      </h2>
+      <p class="section-lead" data-en="Before Pentecost came, ten days of prayer came first. Before revival comes, prayer comes first. We gather at dawn because the apostolic church was born on its knees." data-es="Antes de que viniera Pentecostés, vinieron diez días de oración. Antes de que venga el avivamiento, viene la oración. Nos reunimos al amanecer porque la iglesia apostólica nació de rodillas.">Before Pentecost came, ten days of prayer came first. Before revival comes, prayer comes first. We gather at dawn because the apostolic church was born on its knees.</p>
+    </div>
+
+    <div class="prayer-grid reveal-stagger">
+      <article class="prayer-pillar">
+        <div class="icon" aria-hidden="true">
+          <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="20" r="14"/><path d="M20 6v3M20 31v3M6 20h3M31 20h3M10 10l2 2M28 28l2 2M30 10l-2 2M12 28l-2 2"/></svg>
+        </div>
+        <h3 data-en="It moves heaven." data-es="Mueve el cielo.">It moves heaven.</h3>
+        <p data-en="James said the fervent prayer of a righteous person 'availeth much.' Elijah prayed and shut the sky. Daniel prayed and angels were dispatched. Prayer is not whispering wishes — it is the appointed means by which earth touches eternity." data-es="Santiago dijo que la oración ferviente del justo 'puede mucho.' Elías oró y cerró el cielo. Daniel oró y los ángeles fueron despachados. La oración no es susurrar deseos — es el medio designado por el cual la tierra toca la eternidad.">James said the fervent prayer of a righteous person "availeth much." Elijah prayed and shut the sky. Daniel prayed and angels were dispatched. Prayer is not whispering wishes — it is the appointed means by which earth touches eternity.</p>
+      </article>
+
+      <article class="prayer-pillar">
+        <div class="icon" aria-hidden="true">
+          <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 4l4 12 12 1-9 8 3 12-10-7-10 7 3-12-9-8 12-1z"/></svg>
+        </div>
+        <h3 data-en="It births revival." data-es="Da a luz avivamiento.">It births revival.</h3>
+        <p data-en="One hundred and twenty disciples obeyed Christ's command to wait. They prayed for ten days. Then the Holy Spirit fell, three thousand were saved, and the Apostolic church was born. Every awakening since has started the same way — on the knees of a few." data-es="Ciento veinte discípulos obedecieron el mandato de Cristo de esperar. Oraron por diez días. Luego cayó el Espíritu Santo, tres mil fueron salvos, y nació la iglesia Apostólica. Cada avivamiento desde entonces ha comenzado de la misma manera — de rodillas de unos pocos.">One hundred and twenty disciples obeyed Christ's command to wait. They prayed for ten days. Then the Holy Spirit fell, three thousand were saved, and the Apostolic church was born. Every awakening since has started the same way — on the knees of a few.</p>
+      </article>
+
+      <article class="prayer-pillar">
+        <div class="icon" aria-hidden="true">
+          <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="20" r="6"/><path d="M20 4v6M20 30v6M4 20h6M30 20h6"/><path d="M9 9l4 4M27 27l4 4M31 9l-4 4M13 27l-4 4"/></svg>
+        </div>
+        <h3 data-en="It changes you." data-es="Te transforma.">It changes you.</h3>
+        <p data-en="Moses came down from forty days with God and his face shone. Daniel was changed by his three-times-a-day rhythm. Jesus rose 'a great while before day' to pray alone. Prayer is not what we do for God — it is the place where God remakes us into His image." data-es="Moisés descendió de cuarenta días con Dios y su rostro resplandecía. Daniel fue transformado por su ritmo de tres veces al día. Jesús se levantaba 'muy de mañana, siendo aún muy oscuro' para orar a solas. La oración no es lo que hacemos por Dios — es el lugar donde Dios nos rehace a Su imagen.">Moses came down from forty days with God and his face shone. Daniel was changed by his three-times-a-day rhythm. Jesus rose "a great while before day" to pray alone. Prayer is not what we do for God — it is the place where God remakes us into His image.</p>
+      </article>
+    </div>
+
+    <div class="prayer-invitation reveal">
+      <div class="prayer-invitation-inner">
+        <div class="invitation-text">
+          <span class="eyebrow" data-en="Join us at dawn" data-es="Únete al amanecer">Join us at dawn</span>
+          <h3 data-en="6:00 AM · Saturdays + Sundays" data-es="6:00 AM · Sábados y Domingos">6:00 AM · Saturdays + Sundays</h3>
+          <p data-en="Bilingual corporate prayer. No order of service — just hungry hearts seeking the face of God before the city wakes. Coffee after." data-es="Oración corporativa bilingüe. Sin orden de servicio — sólo corazones hambrientos buscando el rostro de Dios antes de que despierte la ciudad. Café después.">Bilingual corporate prayer. No order of service — just hungry hearts seeking the face of God before the city wakes. Coffee after.</p>
+        </div>
+        <div class="invitation-action">
+          <a href="blog/power-of-prayer/" class="btn btn-ghost">
+            <span data-en="Read the full teaching" data-es="Lee la enseñanza completa">Read the full teaching</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -2661,9 +2960,11 @@
             <label for="sunday" data-en="I will attend" data-es="Asistiré">I will attend</label>
             <select id="sunday" name="sunday" required>
               <option value="" disabled selected data-en="Choose a Sunday service" data-es="Elige un servicio dominical">Choose a Sunday service</option>
+              <option value="sun-6am" data-en="Sunday · 6:00 AM (Morning Prayer)" data-es="Domingo · 6:00 AM (Oración Matutina)">Sunday · 6:00 AM (Morning Prayer)</option>
               <option value="sun-11am" data-en="Sunday · 11:00 AM (Main Worship)" data-es="Domingo · 11:00 AM (Servicio Principal)">Sunday · 11:00 AM (Main Worship)</option>
-              <option value="tue-7pm" data-en="Tuesday · 7:00 PM (Bible Study)" data-es="Martes · 7:00 PM (Estudio Bíblico)">Tuesday · 7:00 PM (Bible Study)</option>
-              <option value="thu-7pm" data-en="Thursday · 7:00 PM (Prayer Service)" data-es="Jueves · 7:00 PM (Servicio de Oración)">Thursday · 7:00 PM (Prayer Service)</option>
+              <option value="tue-7pm" data-en="Tuesday · 7:00 PM (Midweek Service)" data-es="Martes · 7:00 PM (Servicio)">Tuesday · 7:00 PM (Midweek Service)</option>
+              <option value="thu-7pm" data-en="Thursday · 7:00 PM (Midweek Service)" data-es="Jueves · 7:00 PM (Servicio)">Thursday · 7:00 PM (Midweek Service)</option>
+              <option value="sat-6am" data-en="Saturday · 6:00 AM (Morning Prayer)" data-es="Sábado · 6:00 AM (Oración Matutina)">Saturday · 6:00 AM (Morning Prayer)</option>
             </select>
           </div>
           <button type="submit" class="btn btn-primary form-submit" data-magnetic>

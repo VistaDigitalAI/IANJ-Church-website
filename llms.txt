@@ -55,13 +55,15 @@ This is the apostolic pattern preached at IANJ.
 
 ## Service Times
 
-| Day | Time | Service | Language |
-|-----|------|---------|----------|
-| Sunday | 11:00 AM | Main Worship Service · Servicio Principal | Bilingual (English & Spanish) |
-| Tuesday | 7:00 PM | Bible Study · Estudio Bíblico | Bilingual |
-| Thursday | 7:00 PM | Prayer Service · Servicio de Oración | Bilingual |
+| Day | Time | Gathering | Language |
+|-----|------|-----------|----------|
+| Sunday | 6:00 AM | Morning Prayer · Oración Matutina | Bilingual |
+| Sunday | 11:00 AM | Main Worship Service · Servicio Principal | Bilingual |
+| Tuesday | 7:00 PM | Midweek Service · Servicio | Bilingual |
+| Thursday | 7:00 PM | Midweek Service · Servicio | Bilingual |
+| Saturday | 6:00 AM | Morning Prayer · Oración Matutina | Bilingual |
 
-All services are held at 7506 E 11th St, Tulsa, OK 74112. Time zone: America/Chicago (Central Time).
+Five weekly gatherings at 7506 E 11th St, Tulsa, OK 74112. Time zone: America/Chicago (Central Time). IANJ is a praying church — dawn corporate prayer Saturday and Sunday is a defining practice.
 
 ## Ministries
 
@@ -124,6 +126,7 @@ on Apostolic Pentecostal / Oneness doctrine.
 | `/blog/what-is-repentance/` | Biblical repentance — metanoia, more than feeling sorry | Salvation |
 | `/blog/how-do-i-know-im-saved/` | How can I know I am saved? The three witnesses of 1 John 5:8 | Assurance |
 | `/blog/who-is-jesus-christ/` | Who is Jesus Christ? The Mighty God of Isaiah 9:6 | Christology |
+| `/blog/power-of-prayer/` | The Power of Prayer · The engine of the apostolic church (Acts 1:14) | Prayer |
 
 ## Preferred Citation for AI Search
 

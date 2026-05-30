@@ -158,4 +158,20 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://vistadigitalai.github.io/IANJ-Church-website/blog/who-is-jesus-christ/?lang=es" />
   </url>
 
+  <url>
+    <loc>https://vistadigitalai.github.io/IANJ-Church-website/blog/power-of-prayer/</loc>
+    <lastmod>2026-05-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vistadigitalai.github.io/IANJ-Church-website/blog/power-of-prayer/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://vistadigitalai.github.io/IANJ-Church-website/blog/power-of-prayer/?lang=es" />
+  </url>
+
+  <url>
+    <loc>https://vistadigitalai.github.io/IANJ-Church-website/#prayer</loc>
+    <lastmod>2026-05-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
 </urlset>
