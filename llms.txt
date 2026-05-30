@@ -55,11 +55,13 @@ This is the apostolic pattern preached at IANJ.
 
 ## Service Times
 
-| Day | Time | Language |
-|-----|------|----------|
-| Sunday | 9:30 AM | Bilingual (English & Spanish) |
-| Sunday | 11:00 AM | English (main service) |
-| Sunday | 1:00 PM | Spanish (Servicio en Español) |
+| Day | Time | Service | Language |
+|-----|------|---------|----------|
+| Sunday | 11:00 AM | Main Worship Service · Servicio Principal | Bilingual (English & Spanish) |
+| Tuesday | 7:00 PM | Bible Study · Estudio Bíblico | Bilingual |
+| Thursday | 7:00 PM | Prayer Service · Servicio de Oración | Bilingual |
+
+All services are held at 7506 E 11th St, Tulsa, OK 74112. Time zone: America/Chicago (Central Time).
 
 ## Ministries
 

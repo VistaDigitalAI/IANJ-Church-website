@@ -1875,13 +1875,27 @@
   "openingHoursSpecification": [
     {
       "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Tuesday",
+      "opens": "19:00",
+      "closes": "20:30",
+      "name": "Tuesday Bible Study"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Thursday",
+      "opens": "19:00",
+      "closes": "20:30",
+      "name": "Thursday Prayer Service"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
       "dayOfWeek": "Sunday",
-      "opens": "09:30",
-      "closes": "14:30",
-      "name": "Sunday Services"
+      "opens": "11:00",
+      "closes": "12:30",
+      "name": "Sunday Main Worship"
     }
   ],
-  "openingHours": ["Su 09:30-14:30"],
+  "openingHours": ["Tu 19:00-20:30", "Th 19:00-20:30", "Su 11:00-12:30"],
   "knowsLanguage": [
     { "@type": "Language", "name": "English", "alternateName": "en" },
     { "@type": "Language", "name": "Spanish", "alternateName": "es" }
@@ -1994,7 +2008,7 @@
       "name": "What are IANJ Sunday service times?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "IANJ holds three Sunday services: 9:30 AM (bilingual English/Spanish), 11:00 AM (English main service), and 1:00 PM (Servicio en Español). Visitors are welcomed at every service. No appointment needed — come as you are."
+        "text": "IANJ holds three weekly gatherings at 7506 E 11th St, Tulsa, OK: Sunday Main Worship at 11:00 AM (bilingual English/Spanish), Tuesday Bible Study at 7:00 PM, and Thursday Prayer Service at 7:00 PM. Visitors are welcomed at every service. No appointment needed — come as you are."
       }
     },
     {
@@ -2021,26 +2035,26 @@
 {
   "@context": "https://schema.org",
   "@type": "Event",
-  "name": "Sunday Morning Service (Bilingual)",
-  "description": "Weekly bilingual Apostolic Pentecostal worship service in English and Spanish. Prayer, the Word, and the moving of the Holy Spirit.",
+  "name": "Sunday Main Worship Service (Bilingual)",
+  "description": "Weekly bilingual Apostolic Pentecostal main worship service in English and Spanish. Prayer, the preached Word, and the moving of the Holy Spirit at IANJ in Tulsa, OK.",
   "eventSchedule": {
     "@type": "Schedule",
     "repeatFrequency": "P1W",
     "byDay": "https://schema.org/Sunday",
-    "startTime": "09:30",
-    "endTime": "11:00",
+    "startTime": "11:00",
+    "endTime": "12:30",
     "scheduleTimezone": "America/Chicago"
   },
   "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
   "eventStatus": "https://schema.org/EventScheduled",
   "location": {
     "@type": "Place",
-    "name": "IANJ Apostolic Church",
+    "name": "IANJ — Iglesia Apostólica del Nombre de Jesucristo",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "7506 E 11th St",
       "addressLocality": "Tulsa",
-      "addressRegion": "TX",
+      "addressRegion": "OK",
       "postalCode": "74112",
       "addressCountry": "US"
     }
@@ -2062,48 +2076,14 @@
 {
   "@context": "https://schema.org",
   "@type": "Event",
-  "name": "Sunday Main Service (English)",
-  "description": "Main Sunday worship service in English at IANJ Apostolic Church.",
+  "name": "Tuesday Bible Study · Estudio Bíblico",
+  "description": "Weekly midweek Bible study at IANJ — bilingual exposition of the Scriptures, group discussion, and prayer. Estudio Bíblico semanal de mitad de semana.",
   "eventSchedule": {
     "@type": "Schedule",
     "repeatFrequency": "P1W",
-    "byDay": "https://schema.org/Sunday",
-    "startTime": "11:00",
-    "endTime": "12:30",
-    "scheduleTimezone": "America/Chicago"
-  },
-  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-  "eventStatus": "https://schema.org/EventScheduled",
-  "location": {
-    "@type": "Place",
-    "name": "IANJ Apostolic Church",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "7506 E 11th St",
-      "addressLocality": "Tulsa",
-      "addressRegion": "TX",
-      "postalCode": "74112",
-      "addressCountry": "US"
-    }
-  },
-  "organizer": { "@id": "https://vistadigitalai.github.io/IANJ-Church-website/#church" },
-  "isAccessibleForFree": true,
-  "inLanguage": "en-US"
-}
-</script>
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Event",
-  "name": "Servicio Dominical en Español",
-  "description": "Servicio dominical en español de la Iglesia Apostólica del Nombre de Jesucristo. Predicación de Jesucristo, oración y la presencia del Espíritu Santo.",
-  "eventSchedule": {
-    "@type": "Schedule",
-    "repeatFrequency": "P1W",
-    "byDay": "https://schema.org/Sunday",
-    "startTime": "13:00",
-    "endTime": "14:30",
+    "byDay": "https://schema.org/Tuesday",
+    "startTime": "19:00",
+    "endTime": "20:30",
     "scheduleTimezone": "America/Chicago"
   },
   "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
@@ -2115,14 +2095,48 @@
       "@type": "PostalAddress",
       "streetAddress": "7506 E 11th St",
       "addressLocality": "Tulsa",
-      "addressRegion": "TX",
+      "addressRegion": "OK",
       "postalCode": "74112",
       "addressCountry": "US"
     }
   },
   "organizer": { "@id": "https://vistadigitalai.github.io/IANJ-Church-website/#church" },
   "isAccessibleForFree": true,
-  "inLanguage": "es-US"
+  "inLanguage": ["en-US", "es-US"]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Event",
+  "name": "Thursday Prayer Service · Servicio de Oración",
+  "description": "Weekly Thursday prayer service at IANJ Apostolic Church — corporate intercession, worship, and seeking the moving of the Holy Spirit. Servicio de Oración semanal.",
+  "eventSchedule": {
+    "@type": "Schedule",
+    "repeatFrequency": "P1W",
+    "byDay": "https://schema.org/Thursday",
+    "startTime": "19:00",
+    "endTime": "20:30",
+    "scheduleTimezone": "America/Chicago"
+  },
+  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+  "eventStatus": "https://schema.org/EventScheduled",
+  "location": {
+    "@type": "Place",
+    "name": "IANJ — Iglesia Apostólica del Nombre de Jesucristo",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "7506 E 11th St",
+      "addressLocality": "Tulsa",
+      "addressRegion": "OK",
+      "postalCode": "74112",
+      "addressCountry": "US"
+    }
+  },
+  "organizer": { "@id": "https://vistadigitalai.github.io/IANJ-Church-website/#church" },
+  "isAccessibleForFree": true,
+  "inLanguage": ["en-US", "es-US"]
 }
 </script>
 
@@ -2480,26 +2494,26 @@
       <span class="eyebrow" data-en="Service Times" data-es="Horario de Servicios">Service Times</span>
       <h2 class="section-title">
         <span data-en="Come worship" data-es="Ven a adorar">Come worship</span>
-        <em data-en="this Sunday." data-es="este Domingo.">this Sunday.</em>
+        <em data-en="with us." data-es="con nosotros.">with us.</em>
       </h2>
-      <p class="section-lead" data-en="Three services. One family. The same Jesus — preached without compromise." data-es="Tres servicios. Una familia. El mismo Jesús — predicado sin componendas.">Three services. One family. The same Jesus — preached without compromise.</p>
+      <p class="section-lead" data-en="Three weekly gatherings. One family. The same Jesus — preached without compromise." data-es="Tres reuniones semanales. Una familia. El mismo Jesús — predicado sin componendas.">Three weekly gatherings. One family. The same Jesus — preached without compromise.</p>
     </div>
 
     <div class="services-grid reveal-stagger">
       <div class="service-card">
-        <div class="day" data-en="Sunday Morning" data-es="Domingo Mañana">Sunday Morning</div>
-        <div class="time">9:30<span class="period">AM</span></div>
-        <div class="meta" data-en="Bilingual · Prayer & Word" data-es="Bilingüe · Oración y Palabra">Bilingual · Prayer & Word</div>
-      </div>
-      <div class="service-card">
-        <div class="day" data-en="Sunday Main" data-es="Domingo Principal">Sunday Main</div>
+        <div class="day" data-en="Sunday Worship" data-es="Servicio Dominical">Sunday Worship</div>
         <div class="time">11:00<span class="period">AM</span></div>
-        <div class="meta" data-en="English · Main Service" data-es="Inglés · Servicio Principal">English · Main Service</div>
+        <div class="meta" data-en="Main Service · Bilingual" data-es="Servicio Principal · Bilingüe">Main Service · Bilingual</div>
       </div>
       <div class="service-card">
-        <div class="day" data-en="Sunday Afternoon" data-es="Domingo Tarde">Sunday Afternoon</div>
-        <div class="time">1:00<span class="period">PM</span></div>
-        <div class="meta" data-en="Español · Servicio en Español" data-es="Español · Servicio en Español">Español · Servicio en Español</div>
+        <div class="day" data-en="Tuesday" data-es="Martes">Tuesday</div>
+        <div class="time">7:00<span class="period">PM</span></div>
+        <div class="meta" data-en="Bible Study · Estudio Bíblico" data-es="Estudio Bíblico · Bible Study">Bible Study · Estudio Bíblico</div>
+      </div>
+      <div class="service-card">
+        <div class="day" data-en="Thursday" data-es="Jueves">Thursday</div>
+        <div class="time">7:00<span class="period">PM</span></div>
+        <div class="meta" data-en="Prayer Service · Servicio de Oración" data-es="Servicio de Oración · Prayer Service">Prayer Service · Servicio de Oración</div>
       </div>
     </div>
 
@@ -2646,9 +2660,9 @@
             <label for="sunday" data-en="I will attend" data-es="Asistiré">I will attend</label>
             <select id="sunday" name="sunday" required>
               <option value="" disabled selected data-en="Choose a Sunday service" data-es="Elige un servicio dominical">Choose a Sunday service</option>
-              <option value="9:30" data-en="Sunday · 9:30 AM (Bilingual)" data-es="Domingo · 9:30 AM (Bilingüe)">Sunday · 9:30 AM (Bilingual)</option>
-              <option value="11:00" data-en="Sunday · 11:00 AM (English)" data-es="Domingo · 11:00 AM (Inglés)">Sunday · 11:00 AM (English)</option>
-              <option value="13:00" data-en="Sunday · 1:00 PM (Español)" data-es="Domingo · 1:00 PM (Español)">Sunday · 1:00 PM (Español)</option>
+              <option value="sun-11am" data-en="Sunday · 11:00 AM (Main Worship)" data-es="Domingo · 11:00 AM (Servicio Principal)">Sunday · 11:00 AM (Main Worship)</option>
+              <option value="tue-7pm" data-en="Tuesday · 7:00 PM (Bible Study)" data-es="Martes · 7:00 PM (Estudio Bíblico)">Tuesday · 7:00 PM (Bible Study)</option>
+              <option value="thu-7pm" data-en="Thursday · 7:00 PM (Prayer Service)" data-es="Jueves · 7:00 PM (Servicio de Oración)">Thursday · 7:00 PM (Prayer Service)</option>
             </select>
           </div>
           <button type="submit" class="btn btn-primary form-submit" data-magnetic>
